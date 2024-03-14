@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <BrowserRouter>
       <Routes>
-      <Route index element={<Home />} />
+      <Route  index element={<Home />} />
       <Route path="about" element={<SobreNos />} />
       </Routes>
       </BrowserRouter>
