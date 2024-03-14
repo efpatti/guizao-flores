@@ -1,27 +1,21 @@
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
-import SobreNos from "./pages/aboutus";
-import "./App.css";
-function App() {
-  return (
-    <>
-      <ChakraProvider>
-        <h1>App</h1>
-      </ChakraProvider>
-      <SobreNos />
-    </>
-=======
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { ChakraProvider } from '@chakra-ui/react'
-import NavBar from "./components/NavBar"
+import { ChakraProvider } from '@chakra-ui/react';
+import NavBar from "./components/NavBar";
+
 import './App.css';
+
+import Home from "./pages/Homepage";
 function App() {
   return (
     <ChakraProvider>
       <NavBar />
+      <BrowserRouter>
+      <Routes>
+      <Route index element={<Home />} />
+      </Routes>
+      </BrowserRouter>
     </ChakraProvider>
->>>>>>> fc97df56dfd8ffa673ae2347bdc085b21fab4a03
+
   );
 }
 
