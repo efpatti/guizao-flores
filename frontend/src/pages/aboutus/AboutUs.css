@@ -1,0 +1,51 @@
+.titulo {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+.boxtextone {
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  padding: 20px;
+  font-weight: ;
+}
+.titulobox {
+  background-color: linear-gradient(#56626b, #4c6c81, #083263);
+}
+.gradient {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(215, 4, 35),
+    rgb(223, 210, 63),
+    rgb(203, 126, 150)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+.gradientdois {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(96, 88, 192),
+    rgb(162, 164, 214),
+    rgb(193, 189, 128)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+.textoum {
+  text-align: justify;
+}
+Image {
+  border-radius: 50px;
+}
+.cutetext {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  padding: 30px;
+}
