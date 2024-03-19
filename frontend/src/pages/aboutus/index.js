@@ -1,17 +1,22 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import FotoUm from "../../img/snum.jpg";
 import Image from "react-bootstrap/Image";
 import { Container, Row, Col } from "react-bootstrap";
 import "./AboutUs.css";
 import FotoDois from "../../img/sndois.jpg";
-import FotoTres from "../../img/Entregamos para todo o Brasil.png";
-import VideoDaTropa from "../../videos/guizaovideo.mp4";
+import FotoTres from "../../img/Entregamos para todo Brasil.png";
+import VideoDaTropa from "../../videos/Guizäo Flores é.mp4";
+import LogoUm from "../../img/Design sem nome.png";
+import LogoDois from "../../img/Design sem nome (1).png";
+import LogoTres from "../../img/Design sem nome (2).png";
+import LogoQuatro from "../../img/Design sem nome (3).png";
+import LogoCinco from "../../img/Design sem nome (4).png";
+import LogoSeis from "../../img/Design sem nome (5).png";
 function SobreNos() {
   return (
     <>
       <Container>
         <Row>
-          <Col className="text-center">
+          <Col className="text-center mt-5">
             <h1 className="titulo">Sobre nós</h1>
           </Col>
         </Row>
@@ -93,25 +98,38 @@ function SobreNos() {
           </Col>
         </Row>
       </Container>
-      <Container fluid className="mt-5">
+      <Container fluid className="mt-5 ">
         <Row className="text-center">
-          <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+          <Col xs={6} md={2} className="">
+            <Image
+              className="margin"
+              src={LogoUm}
+              style={{ width: "150px", border: "solid beige 2px" }}
+              roundedCircle
+            />
           </Col>
           <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+            <Image
+              src={LogoDois}
+              style={{ width: "150px", border: "solid beige 2px" }}
+              roundedCircle
+            />
           </Col>
           <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+            <Image src={LogoTres} style={{ width: "150px" }} roundedCircle />
           </Col>
           <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+            <Image src={LogoQuatro} style={{ width: "150px" }} roundedCircle />
           </Col>
           <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+            <Image src={LogoCinco} style={{ width: "150px" }} roundedCircle />
           </Col>
           <Col xs={6} md={2}>
-            <Image src={FotoUm} style={{ width: "150px" }} roundedCircle />
+            <Image
+              src={LogoSeis}
+              style={{ width: "150px", border: "solid beige 2px" }}
+              roundedCircle
+            />
           </Col>
         </Row>
       </Container>
