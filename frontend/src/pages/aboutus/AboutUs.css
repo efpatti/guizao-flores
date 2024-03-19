@@ -8,11 +8,13 @@
   border-left: solid 1px black;
   padding: 20px;
   font-weight: ;
+  font-weight: lighter;
 }
 .titulobox {
   background-color: linear-gradient(#56626b, #4c6c81, #083263);
 }
 .gradient {
+  font-weight: 400;
   background-image: linear-gradient(
     to bottom,
     rgb(215, 4, 35),
@@ -26,6 +28,7 @@
   color: black;
 }
 .gradientdois {
+  font-weight: 400;
   background-image: linear-gradient(
     to bottom,
     rgb(96, 88, 192),
@@ -45,7 +48,23 @@ Image {
   border-radius: 50px;
 }
 .cutetext {
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
+  border-top: solid 1px rgb(186, 185, 182);
+  border-bottom: solid 1px rgb(186, 185, 182);
   padding: 30px;
+}
+.padding {
+  padding-left: ;
+}
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.margin {
+  margin-left: 15px;
 }

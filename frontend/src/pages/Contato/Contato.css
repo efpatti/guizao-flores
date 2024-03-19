@@ -1,0 +1,28 @@
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.contact-info div {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  color: #4caf50; /* Verde */
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
