@@ -3,7 +3,7 @@ function NavBar() {
   const navData = [
     {
       name: "Home",
-      href: "home"
+      href: "/"
     },
     {
       name: "Sobre nós",
