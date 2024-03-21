@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="about" element={<SobreNos />} />
+          <Route path="contact" element={<Contato />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
