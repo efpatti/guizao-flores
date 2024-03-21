@@ -1,31 +1,51 @@
 import React from "react";
 import "./Contato.css";
-
-const Contato = () => {
+import { Container, Form, Image, Button } from "react-bootstrap";
+import { Input, Textarea } from "@chakra-ui/react";
+import Arrow from "../../img/arrow-right.svg";
+import ImgRight from "../../img/guizao-flores.png";
+function Contato() {
   return (
-    <div className="container contact-container">
-      <h1 className="text-center">Entre em Contato</h1>
-      <div className="row">
-        <div className="col-md-4">
-          <h2>Localização</h2>
-          <p>Rua das Flores, 123</p>
-          <p>Cidade das Flores</p>
-          <p>CEP: 12345-678</p>
-        </div>
-        <div className="col-md-4">
-          <h2>Horário de Funcionamento</h2>
-          <p>Segunda a Sexta: 8h - 18h</p>
-          <p>Sábado: 9h - 15h</p>
-          <p>Domingo: Fechado</p>
-        </div>
-        <div className="col-md-4">
-          <h2>Contato</h2>
-          <p>Telefone: (11) 1234-5678</p>
-          <p>Email: contato@minhafloricultura.com</p>
-        </div>
+    <>
+      <div className="body">
+        <Container className="contact-container">
+          <Form action="" className="contact-left">
+            <div className="contact-left-title">
+              <h2>Get in touch</h2>
+              <hr />
+            </div>
+            <Input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="contact-inputs"
+              required
+            />
+            <Input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="contact-inputs"
+              required
+            />
+            <Textarea
+              name="message"
+              placeholder="Your Message"
+              className="contact-inputs"
+              required
+            ></Textarea>
+            <Button type="submit">
+              {" "}
+              submit <Image src={Arrow} />{" "}
+            </Button>
+          </Form>
+          <div className="contact-right">
+            <Image src={ImgRight} />
+          </div>
+        </Container>
       </div>
-    </div>
+    </>
   );
-};
+}
 
 export default Contato;
