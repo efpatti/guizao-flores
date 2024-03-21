@@ -5,6 +5,7 @@ import Home from "./pages/Homepage";
 import AboutUs from "./pages/AaboutUs";
 import Catalogo from "./pages/Catalogo";
 import Pagamento from "./pages/Pagamento";
+import Contato from "./pages/Contato";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="products" element={<Catalogo />} />
             <Route path="payment" element={<Pagamento />} />
+            <Route path="contact" element={<Contato />} />
           </Routes>
         </Router>
       </ChakraProvider>

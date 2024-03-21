@@ -7,9 +7,10 @@ import ImgRight from "../../img/Pegue a flor.png";
 import Phone from "../../img/telephone.svg";
 import map from "../../img/geo-alt.svg";
 import Email from "../../img/envelope.svg";
+import { Box } from "@chakra-ui/react";
 function Contato() {
   return (
-    <>
+    <Box mt="8.5rem">
       <div className="body">
         <Container className="contact-container">
           <Form
@@ -91,7 +92,7 @@ function Contato() {
           </div>
         </Container>
       </div>
-    </>
+    </Box>
   );
 }
 

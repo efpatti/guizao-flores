@@ -1,6 +1,7 @@
 import FotoUm from "../../img/snum.jpg";
 import Image from "react-bootstrap/Image";
 import { Container, Row, Col } from "react-bootstrap";
+import { Box } from "@chakra-ui/react";
 import "./AboutUs.css";
 import FotoDois from "../../img/sndois.jpg";
 import FotoTres from "../../img/Entregamos para todo Brasil.png";
@@ -13,7 +14,7 @@ import LogoCinco from "../../img/Design sem nome (4).png";
 import LogoSeis from "../../img/Design sem nome (5).png";
 function SobreNos() {
   return (
-    <>
+    <Box mt="6rem">
       <Container>
         <Row>
           <Col className="text-center mt-5">
@@ -148,7 +149,7 @@ function SobreNos() {
           </Col>
         </Row>
       </Container>
-    </>
+    </Box>
   );
 }
 export default SobreNos;

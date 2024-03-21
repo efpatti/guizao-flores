@@ -4,8 +4,8 @@
   margin-bottom: 50px;
 }
 .carrosel {
+  margin-top: 8.6rem;
   margin-bottom: 50px;
-  margin-top: 8.2rem;
 }
 .letreiro1 {
   margin-left: 320px;
@@ -36,24 +36,61 @@
   border-radius: 45px;
   background-color: #ffffff;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
 }
+.corpo-dicas {
+  display: flex;
+}
+
 .linhaslaterais {
   border-left: solid 3px #000000;
   padding-right: 20px;
-}
-*/ .elojob {
-  background-color: rgb(205, 50, 50);
-  width: 450px;
-  height: 330px;
-}
-.caixa-berde {
-  background-color: gainsboro;
-  width: 450px;
-  height: 330px;
-}
-.butao {
-  width: 150px;
+  padding-left: 20px;
   height: 150px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.texto-dica {
+  width: 260px;
+}
+.titulo-dicas {
+  text-align: center;
+}
+.fotoflor {
+  width: 180px;
+  margin-top: 0% !important;
+  padding-top: 0% !important;
+  margin-left: 25px;
+}
+.texto-dica h5 {
+  margin-top: 20px;
+}
+.fotoflor2 {
+  width: 180px;
+  margin-top: 0% !important;
+  padding-top: 0% !important;
+}
+.linha2 {
+  text-align: right;
+  border-right: solid 3px #000000;
+  margin-left: 65px;
+  height: 150px;
+  margin-top: 10px;
+}
+.linha2-corpo {
+  display: flex;
+}
+.textos {
+  width: 260px;
+  text-align: right;
+  margin-right: 20px;
+  height: 50px;
+}
+.titulo-linha {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.segunda {
+  display: flex;
 }

@@ -30,6 +30,10 @@ const NavBar = () => {
       name: "Produtos",
       href: "products",
     },
+    {
+      name: "Contato",
+      href: "contact",
+    },
   ];
 
   const accountData = [
