@@ -1,67 +1,59 @@
-<<<<<<< HEAD
 .letreiro {
   margin-left: 450px;
   margin-top: 50px;
   margin-bottom: 50px;
-=======
-/* .letreiro{
-    margin-left: 450px;
-    margin-top: 50px;
-    margin-bottom: 50px;
->>>>>>> refs/remotes/origin/main
 }
 .carrosel {
   margin-bottom: 50px;
   margin-top: 8.2rem;
 }
-.letreiro1{
-    margin-left: 320px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.letreiro1 {
+  margin-left: 320px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-.card2{
-    padding: 3px 3px 3px 3px;
+.card2 {
+  padding: 3px 3px 3px 3px;
 }
 .botao-baro {
-    background-color: black !important;
-    color: white !important;
+  background-color: black !important;
+  color: white !important;
 }
 
 .botao-baro:hover {
-    background-color: #fdfdfd !important;
-    color: black !important; 
+  background-color: #fdfdfd !important;
+  color: black !important;
 }
-.card3{
-    margin: 4px 4px 4px 4px  !important;
+.card3 {
+  margin: 4px 4px 4px 4px !important;
 }
-.preco-texto{
- color: black !important;   
+.preco-texto {
+  color: black !important;
 }
-.Caixa-dicas{
-    width: 550px;
-    height: 520px;
-    border-radius: 45px;
-    background-color:#ffffff;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    
+.Caixa-dicas {
+  width: 550px;
+  height: 520px;
+  border-radius: 45px;
+  background-color: #ffffff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 .linhaslaterais {
-    border-left: solid 3px #000000;
-    padding-right: 20px;
-  } 
-   */
-   .elojob{
-    background-color: rgb(205, 50, 50);
-    width: 450px;
-    height: 330px;
-   }
-   .caixa-berde{
-    background-color: gainsboro;width: 450px;
-    height: 330px;
-   }
-   .butao{
-    width: 150px;
-    height: 150px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); 
-   }
+  border-left: solid 3px #000000;
+  padding-right: 20px;
+}
+*/ .elojob {
+  background-color: rgb(205, 50, 50);
+  width: 450px;
+  height: 330px;
+}
+.caixa-berde {
+  background-color: gainsboro;
+  width: 450px;
+  height: 330px;
+}
+.butao {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
