@@ -79,7 +79,11 @@ function SobreNos() {
             </div>
           </Col>
           <Col className=" mt-3">
-            <Image style={{ width: "500px" }} src={FotoDois} />
+            <Image
+              className="imgdois"
+              style={{ width: "500px" }}
+              src={FotoDois}
+            />
           </Col>
         </Row>
       </Container>
