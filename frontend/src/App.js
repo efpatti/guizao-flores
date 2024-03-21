@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
-import SobreNos from "./pages/AboutUs";
+import SobreNos from "./pages/AaboutUs";
 import Contato from "./pages/Contato";
 import "./App.css";
 
