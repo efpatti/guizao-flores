@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 .letreiro{
+=======
+<<<<<<< HEAD
+.letreiro {
+  margin-left: 450px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+=======
+/* .letreiro{
+>>>>>>> 0faa345d2573db26fc254b9d66038f9d04a9f03b
     margin-left: 450px;
     margin-top: 50px;
     margin-bottom: 50px;
+>>>>>>> refs/remotes/origin/main
 }
-.carrosel{
-    margin-top: 50px;
-    margin-bottom: 50px;
-   
+.carrosel {
+  margin-bottom: 50px;
+  margin-top: 8.2rem;
 }
 .letreiro1{
     margin-left: 320px;

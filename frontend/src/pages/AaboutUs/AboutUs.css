@@ -7,8 +7,11 @@
   border-top: solid 1px black;
   border-left: solid 1px black;
   padding: 20px;
+<<<<<<< HEAD:frontend/src/pages/aboutus/AboutUs.css
+=======
   font-weight: ;
   font-weight: lighter;
+>>>>>>> refs/remotes/origin/main:frontend/src/pages/AaboutUs/AboutUs.css
 }
 .titulobox {
   background-color: linear-gradient(#56626b, #4c6c81, #083263);
