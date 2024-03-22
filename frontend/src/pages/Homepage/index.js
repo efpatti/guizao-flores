@@ -1,5 +1,5 @@
 import {
-  CardHeader,
+  useColorMode,
   CardBody,
   CardFooter,
   Stack,
@@ -10,6 +10,8 @@ import {
   Image,
   Text,
   Button,
+  Flex,
+  Box,
 } from "@chakra-ui/react";
 import fototeste from "../../img/guizao-flores.png";
 import bannerOrquidea from "../../img/banner-orquidea.webp";
@@ -137,9 +139,9 @@ function Home() {
       Descricao1: "descriçao da acessorio",
     },
   ];
-
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <>
+    <section>
       <Carousel className="carrosel">
         <Carousel.Item>
           <img className="bannerfoto" src={bannerabraco} />
@@ -174,20 +176,40 @@ function Home() {
                 <Divider />
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      colorScheme="blue"
-                    >
-                      Comprar
-                    </Button>
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      colorScheme="blue"
-                    >
-                      Adicionar
-                    </Button>
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Comprar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Comprar
+                      </Button>
+                    )}
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Adicionar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Adicionar
+                      </Button>
+                    )}
                   </ButtonGroup>
                 </CardFooter>
               </Card>
@@ -213,21 +235,40 @@ function Home() {
                 <Divider />
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      colorScheme=""
-                    >
-                      Comprar
-                    </Button>
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      variant="ghost"
-                      colorScheme=""
-                    >
-                      Adicionar
-                    </Button>
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Comprar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Comprar
+                      </Button>
+                    )}
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Adicionar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Adicionar
+                      </Button>
+                    )}
                   </ButtonGroup>
                 </CardFooter>
               </Card>
@@ -260,65 +301,86 @@ function Home() {
                 <Divider />
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      colorScheme=""
-                    >
-                      Comprar
-                    </Button>
-                    <Button
-                      className="botao-baro"
-                      {...buttonStyle}
-                      variant="ghost"
-                      colorScheme=""
-                    >
-                      Adicionar
-                    </Button>
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Comprar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Comprar
+                      </Button>
+                    )}
+                    {colorMode === "light" ? (
+                      <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "white", color: "black" }}
+                      >
+                        Adicionar
+                      </Button>
+                    ) : (
+                      <Button
+                        bg="white"
+                        color="black"
+                        _hover={{ bg: "black", color: "white" }}
+                      >
+                        Adicionar
+                      </Button>
+                    )}
                   </ButtonGroup>
                 </CardFooter>
               </Card>
             </Col>
           ))}
         </Row>
-        <br />
-        <br />
-        <Row>
-          <Col></Col>
-          <Col>
-            <div className="Caixa-dicas">
-              {" "}
-              <h1 className="titulo-dicas">Dicas de cuidado</h1>
-              <div className="corpo-dicas">
-                <div className="linhaslaterais">
-                  <div className=" texto-dica">
-                    <h5>Corte os caules:</h5>
-                    <p>
-                      Ao receber flores, corte cerca de 2 a 5 centímetros dos
-                      caules em um ângulo de 45 graus. Isso ajuda na absorção de
-                      água.
-                    </p>
-                  </div>
-                </div>
-                <img className="fotoflor" src={florfofa} />
-              </div>
-              <div className="segunda"></div>
-              <img className="fotoflor2" src={florfofa2} />
-              <div className="linha2">
-                <div className="linha2-corpo">
-                  <h5 className="titulo-linha">Use água limpa e fresca:</h5>
-                  <p className="textos">
+      </Container>
+      <Flex justify="center" align="center" mt="3rem">
+        <Box boxShadow="2xl" rounded="md">
+          <Text textAlign="center" fontSize="3xl">
+            Dicas de cuidado
+          </Text>
+          <Stack direction="column" spacing="5px">
+            <Box>
+              <Stack direction="row" spacing="5px">
+                <Box borderLeft="1px" boxSize="xs" p="5px">
+                  <Text fontSize="2xl">Corte os caules</Text>
+                  <Text fontSize="md">
+                    Ao receber flores, corte cerca de 2 a 5 centímetros dos
+                    caules em um ângulo de 45 graus. Isso ajuda na absorção de
+                    água.
+                  </Text>
+                </Box>
+                <Box>
+                  <Image src={florfofa} />
+                </Box>
+              </Stack>
+            </Box>
+            <Box>
+              <Stack direction="row" spacing="5px">
+                <Box>
+                  <Image src={florfofa2} />
+                </Box>
+                <Box borderRight="1px" boxSize="xs" p="5px">
+                  <Text fontSize="2xl">Use água limpa e fresca</Text>
+                  <Text fontSize="md">
                     Troque a água do vaso regularmente, a cada dois dias, para
                     evitar a proliferação de bactérias.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
-    </>
+                  </Text>
+                </Box>
+              </Stack>
+            </Box>
+          </Stack>
+        </Box>
+      </Flex>
+    </section>
   );
 }
 

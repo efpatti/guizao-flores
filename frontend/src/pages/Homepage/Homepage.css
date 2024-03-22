@@ -15,28 +15,8 @@
 .card2 {
   padding: 3px 3px 3px 3px;
 }
-.botao-baro {
-  background-color: black !important;
-  color: white !important;
-}
-
-.botao-baro:hover {
-  background-color: #fdfdfd !important;
-  color: black !important;
-}
 .card3 {
   margin: 4px 4px 4px 4px !important;
-}
-.preco-texto {
-  color: black !important;
-}
-.Caixa-dicas {
-  width: 550px;
-  height: 520px;
-  border-radius: 45px;
-  background-color: #ffffff;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  padding-left: 20px;
 }
 .corpo-dicas {
   display: flex;
