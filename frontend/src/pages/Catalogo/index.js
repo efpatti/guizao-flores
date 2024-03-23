@@ -9,17 +9,17 @@ import {
   useColorMode,
   Button,
 } from "@chakra-ui/react";
-import { categoriesStore } from "./data";
+import { categoriesStore, getProductData } from "./data";
 import reactStringReplace from "react-string-replace";
+import { MdShoppingCart } from "react-icons/md";
+import ProductCard from "../../components/ProductCard";
 
 function Catalogo() {
   const { colorMode } = useColorMode();
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const handleCategoryClick = (categoryName) => {
-    setSelectedCategory(
-      categoryName === selectedCategory ? null : categoryName
-    );
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId === selectedCategory ? null : categoryId);
   };
 
   return (
@@ -27,33 +27,33 @@ function Catalogo() {
       <Stack direction="column" spacing="5px" maxW="70%">
         <Flex justify="center">
           <Grid templateColumns="repeat(2, 1fr)" gap="1em">
-            {categoriesStore.map((item, i) => (
-              <Box key={i}>
+            {categoriesStore.map((category) => (
+              <Box key={category.id}>
                 <Button
-                  onClick={() => handleCategoryClick(item.name)}
-                  isActive={selectedCategory === item.name}
+                  onClick={() => handleCategoryClick(category.id)}
+                  isActive={selectedCategory === category.id}
                 >
-                  {item.name}
+                  {category.name}
                 </Button>
               </Box>
             ))}
           </Grid>
         </Flex>
         <Box>
-          {categoriesStore.map((category, index) => (
+          {categoriesStore.map((category) => (
             <div
-              key={index}
+              key={category.id}
               style={{
                 display:
-                  selectedCategory === category.name || !selectedCategory
+                  selectedCategory === category.id || !selectedCategory
                     ? "block"
                     : "none",
               }}
             >
               <Grid templateColumns="repeat(4, 1fr)" gap="10px">
-                {category.products.map((item, i) => (
+                {category.products.map((product) => (
                   <Box
-                    key={i}
+                    key={product.id}
                     _hover={{ cursor: "pointer", boxShadow: "lg" }}
                     borderRadius="sm"
                     p="2"
@@ -65,44 +65,66 @@ function Catalogo() {
                       color={colorMode === "light" ? "whitesmoke" : "gray.800"}
                     >
                       {(
-                        ((parseFloat(item.old_price) - parseFloat(item.price)) /
-                          parseFloat(item.old_price)) *
+                        ((parseFloat(product.old_price) -
+                          parseFloat(product.price)) /
+                          parseFloat(product.old_price)) *
                         100
                       ).toFixed(0)}
                       %
                     </Text>
-                    <Image src={item.img} />
+                    <Image src={product.img} />
                     <Text
                       fontWeight="md"
                       color={colorMode === "light" ? "gray.600" : "gray.300"}
                       p="3"
                     >
-                      {item.name}
+                      {product.name}
                     </Text>
-                    <Grid templateColumns="repeat(2, 1fr)" gap="1px">
+                    <Stack direction="row">
                       <Box>
-                        <Text fontSize="sm" as="s">
-                          de R$ {item.old_price}
+                        <Button
+                          bg={colorMode === "light" ? "#405B18" : "greenyellow"}
+                          borderRadius="md"
+                          borderColor={
+                            colorMode === "light" ? "#1A202C" : "greenyellow"
+                          }
+                          border="1px"
+                          _hover={{
+                            color:
+                              colorMode === "light" ? "#1A202C" : "greenyellow",
+                            bg:
+                              colorMode === "light" ? "greenyellow" : "#1A202C",
+                          }}
+                          color={
+                            colorMode === "light" ? "whitesmoke" : "gray.800"
+                          }
+                          leftIcon={<MdShoppingCart />}
+                          size="sm"
+                        >
+                          Add to Cart
+                        </Button>
+                      </Box>
+                      <Box ml="auto">
+                        <Text
+                          fontWeight="semibold"
+                          fontSize="lg"
+                          color={
+                            colorMode === "light" ? "gray.700" : "gray.200"
+                          }
+                        >
+                          ${product.price}
+                        </Text>
+                        <Text
+                          as="s"
+                          fontSize="sm"
+                          color={
+                            colorMode === "light" ? "gray.500" : "gray.300"
+                          }
+                        >
+                          ${product.old_price}
                         </Text>
                       </Box>
-                      <Box>
-                        <Text fontSize="md" as="b">
-                          {item.price}
-                        </Text>
-                      </Box>
-                      <Box>
-                        <Text fontSize="xs" as="b">
-                          3x <span className="fw-light">de </span>
-                          {reactStringReplace(
-                            `3x de ${(parseFloat(item.price) / 3).toFixed(2)}`,
-                            /(\d+\.\d+)/g,
-                            (match, i) => (
-                              <span key={i}>{match.replace(".", ",")}</span>
-                            )
-                          )}
-                        </Text>
-                      </Box>
-                    </Grid>
+                    </Stack>
                   </Box>
                 ))}
               </Grid>

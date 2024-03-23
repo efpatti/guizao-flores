@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Flex,
   Text,
@@ -19,9 +19,10 @@ import {
   MdAccountCircle,
   MdShoppingCart,
 } from "react-icons/md";
+import { CartContext } from "../CartContext";
 import Logo from "../img/guizao-flores.png";
 
-const NavBar = () => {
+const NavBar = ({ categories, onSelectCategory, onSearch }) => {
   const navData = [
     {
       name: "Início",
@@ -54,6 +55,18 @@ const NavBar = () => {
 
   const { colorMode, toggleColorMode } = useColorMode();
   const [color, setColor] = useState(false);
+  const cart = useContext(CartContext);
+  const [show, setShow] = useState(false);
+  const [addToCartClicked, setAddToCartClicked] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    setAddToCartClicked(false);
+  };
+  const handleShow = () => setShow(true);
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
   const changeColor = () => {
     if (window.scrollY >= 90) {
       setColor(true);
@@ -111,8 +124,8 @@ const NavBar = () => {
             </Menu>
           </Box>
           <Box>
-            <Button variant="ghost">
-              <MdShoppingCart />
+            <Button variant="ghost" onClick={handleShow}>
+              <MdShoppingCart /> ({productsCount})
             </Button>
           </Box>
         </Stack>

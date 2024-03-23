@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import { CartProvider } from "./cartContext";
+import { CartProvider } from "./CartContext";
 import Home from "./pages/Homepage";
 import AboutUs from "./pages/AaboutUs";
 import Catalogo from "./pages/Catalogo";
