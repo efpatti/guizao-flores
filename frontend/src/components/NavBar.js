@@ -13,7 +13,12 @@ import {
   Link,
   Image,
 } from "@chakra-ui/react";
-import { MdDarkMode, MdLightMode, MdAccountCircle } from "react-icons/md";
+import {
+  MdDarkMode,
+  MdLightMode,
+  MdAccountCircle,
+  MdShoppingCart,
+} from "react-icons/md";
 import Logo from "../img/guizao-flores.png";
 
 const NavBar = () => {
@@ -104,6 +109,11 @@ const NavBar = () => {
                 ))}
               </MenuList>
             </Menu>
+          </Box>
+          <Box>
+            <Button variant="ghost">
+              <MdShoppingCart />
+            </Button>
           </Box>
         </Stack>
       </Flex>
