@@ -82,27 +82,7 @@ function Catalogo() {
                     </Text>
                     <Stack direction="row">
                       <Box>
-                        <Button
-                          bg={colorMode === "light" ? "#405B18" : "greenyellow"}
-                          borderRadius="md"
-                          borderColor={
-                            colorMode === "light" ? "#1A202C" : "greenyellow"
-                          }
-                          border="1px"
-                          _hover={{
-                            color:
-                              colorMode === "light" ? "#1A202C" : "greenyellow",
-                            bg:
-                              colorMode === "light" ? "greenyellow" : "#1A202C",
-                          }}
-                          color={
-                            colorMode === "light" ? "whitesmoke" : "gray.800"
-                          }
-                          leftIcon={<MdShoppingCart />}
-                          size="sm"
-                        >
-                          Add to Cart
-                        </Button>
+                        <ProductCard product={product} />
                       </Box>
                       <Box ml="auto">
                         <Text
