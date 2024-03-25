@@ -28,7 +28,8 @@ import {
 } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa";
 import { CartContext } from "../CartContext";
-import Logo from "../img/guizao-flores.png";
+import Guizao from "../img/guizao-flores.png";
+import GuizaoJoia from "../img/guizao-flores-joia.png";
 import CartProduct from "./CartProduct";
 
 const NavBar = ({ categories, onSelectCategory }) => {
@@ -104,9 +105,27 @@ const NavBar = ({ categories, onSelectCategory }) => {
           justify="space-between"
           colorScheme={colorMode === "light" ? "dark" : "light"}
         >
-          <Box>
-            <Image src={Logo} alt="Logo" boxSize="100px" className="blink-me" />
+          <Box position="relative" width="100px" height="100px">
+            <Image
+              src={Guizao}
+              alt="Logo"
+              boxSize="100px"
+              className="blink-me"
+              position="absolute"
+              top="0"
+              left="0"
+            />
+            <Image
+              src={GuizaoJoia}
+              alt="Logo"
+              boxSize="100px"
+              className="show-me"
+              position="absolute"
+              top="0"
+              left="0"
+            />
           </Box>
+
           <Stack direction="row" spacing="6" justify="center" flex="1">
             {navData.map((item, i) => (
               <Text fontSize="md" key={i}>
