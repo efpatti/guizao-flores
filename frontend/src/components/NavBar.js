@@ -79,6 +79,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
   return (
     <>
       <Box
+        className="font-header"
         w="100%"
         position="fixed"
         zIndex="5"
@@ -109,7 +110,9 @@ const NavBar = ({ categories, onSelectCategory }) => {
           <Stack direction="row" spacing="6" justify="center" flex="1">
             {navData.map((item, i) => (
               <Text fontSize="md" key={i}>
-                <Link href={item.href}>{item.name}</Link>
+                <Link href={item.href} fontSize="sm">
+                  {item.name}
+                </Link>
               </Text>
             ))}
           </Stack>
