@@ -4,3 +4,13 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+
+.blink-me {
+  animation: blinker 10s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

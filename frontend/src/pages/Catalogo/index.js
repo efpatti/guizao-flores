@@ -40,6 +40,7 @@ function Catalogo() {
         <Box>
           {categoriesStore.map((category) => (
             <div
+              key={category.id}
               style={{
                 display:
                   selectedCategory === category.id || !selectedCategory
@@ -50,6 +51,7 @@ function Catalogo() {
               <Grid templateColumns="repeat(4, 1fr)" gap="10px">
                 {category.products.map((product) => (
                   <Box
+                    key={product.id}
                     _hover={{ cursor: "pointer", boxShadow: "lg" }}
                     borderRadius="sm"
                     p="2"
@@ -77,7 +79,7 @@ function Catalogo() {
                       {product.name}
                     </Text>
                     <Stack direction="row">
-                      <Box key={product.id}>
+                      <Box>
                         <ProductCard product={product} />
                       </Box>
                       <Box ml="auto">

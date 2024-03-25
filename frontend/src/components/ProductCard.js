@@ -40,59 +40,39 @@ function ProductCard({ product }) {
     <Grid direction="row">
       {productQuantity > 0 ? (
         <>
-          <Flex>
-            <Grid direction="row" templateColumns="repeat(2, 1fr)">
-              <Box>
-                <Button
-                  size="sm"
-                  bg={colorMode === "light" ? "white" : ""}
-                  variant="none"
-                  border="1px"
-                  borderColor="transparent"
-                  _hover={{
-                    opacity: "70%",
-                    borderColor:
-                      colorMode === "light" ? "#405B18" : "greenyellow",
-                  }}
-                  color={colorMode === "light" ? "#405B18" : "greenyellow"}
-                >
-                  <MdDelete />
-                  <Text fontSize="xs">{productQuantity}</Text>
-                </Button>
-              </Box>
-              <Box>
-                <Grid>
-                  <Box>
-                    <Button onClick={addOneToCart} variant="ghost" size="xs">
-                      +
-                    </Button>
-                  </Box>
-                  <Box>
-                    <Button
-                      onClick={removeOneFromCart}
-                      variant="ghost"
-                      size="xs"
-                    >
-                      -
-                    </Button>
-                  </Box>
-                </Grid>
-              </Box>
-            </Grid>
-          </Flex>
-          <Link
-            onClick={deleteFromCart}
-            color={colorMode === "light" ? "#405B18" : "greenyellow"}
-          >
-            Remover
-          </Link>
+          <div>
+            <Stack direction="row" spacing="0.5rem">
+              <Button
+                onClick={addOneToCart}
+                size="xs"
+                _hover={{ opacity: "70%" }}
+                borderRadius="full"
+                bg={colorMode === "light" ? "#405B18" : "greenyellow"}
+                color={colorMode === "light" ? "whitesmoke" : "gray.800"}
+              >
+                +
+              </Button>
+              <Text fontSize="md">{productQuantity}</Text>
+              <Button
+                onClick={removeOneFromCart}
+                isRound={true}
+                size="xs"
+                borderRadius="full"
+                _hover={{ opacity: "70%" }}
+                bg={colorMode === "light" ? "#405B18" : "greenyellow"}
+                color={colorMode === "light" ? "whitesmoke" : "gray.800"}
+              >
+                -
+              </Button>
+            </Stack>
+          </div>
         </>
       ) : (
         <Button
           onClick={addOneToCart}
           _hover={{ opacity: "70%" }}
           size="sm"
-          borderRadius="3xl"
+          borderRadius="full"
           color={colorMode === "light" ? "whitesmoke" : "gray.800"}
           bg={colorMode === "light" ? "#405B18" : "greenyellow"}
         >

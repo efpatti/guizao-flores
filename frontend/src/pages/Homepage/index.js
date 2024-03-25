@@ -157,7 +157,7 @@ function Home() {
         </Carousel.Item>
       </Carousel>
 
-      <h1 className="letreiro">Promoçoes de março</h1>
+      <h1 className="letreiro">Promoções de Março</h1>
       <Container>
         <Row>
           {cardData.map((card, index) => (
