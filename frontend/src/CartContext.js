@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { getProductData } from "./pages/Catalogo/data";
 
 export const CartContext = createContext({
@@ -7,79 +7,64 @@ export const CartContext = createContext({
   addOneToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
-  updateCart: () => {}, // Added updateCart function
+  updateCart: () => {},
   getTotalCost: () => {},
+  getProductData: () => {}, // Include getProductData in the default context
 });
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
 
-  function getProductQuantity(id) {
-    const quantity = cartProducts.find(
-      (product) => product.id === id
-    )?.quantity;
+  const getProductQuantity = (id) => {
+    const product = cartProducts.find((product) => product.id === id);
+    return product ? product.quantity : 0;
+  };
 
-    return quantity || 0;
-  }
-
-  function addOneToCart(id) {
+  const addOneToCart = (id) => {
     const quantity = getProductQuantity(id);
+    const updatedProducts =
+      quantity === 0
+        ? [...cartProducts, { id, quantity: 1 }]
+        : cartProducts.map((product) =>
+            product.id === id
+              ? { ...product, quantity: product.quantity + 1 }
+              : product
+          );
+    setCartProducts(updatedProducts);
+  };
 
-    if (quantity === 0) {
-      setCartProducts([
-        ...cartProducts,
-        {
-          id: id,
-          quantity: 1,
-        },
-      ]);
-    } else {
-      setCartProducts(
-        cartProducts.map((product) =>
-          product.id === id
-            ? { ...product, quantity: product.quantity + 1 }
-            : product
-        )
-      );
-    }
-  }
-
-  function removeOneFromCart(id) {
+  const removeOneFromCart = (id) => {
     const quantity = getProductQuantity(id);
-
     if (quantity === 1) {
       deleteFromCart(id);
     } else {
-      setCartProducts(
-        cartProducts.map((product) =>
-          product.id === id
-            ? { ...product, quantity: product.quantity - 1 }
-            : product
-        )
+      const updatedProducts = cartProducts.map((product) =>
+        product.id === id
+          ? { ...product, quantity: product.quantity - 1 }
+          : product
       );
+      setCartProducts(updatedProducts);
     }
-  }
+  };
 
-  function updateCart(id, newQuantity) {
-    setCartProducts(
-      cartProducts.map((product) =>
-        product.id === id ? { ...product, quantity: newQuantity } : product
-      )
+  const updateCart = (id, newQuantity) => {
+    const updatedProducts = cartProducts.map((product) =>
+      product.id === id ? { ...product, quantity: newQuantity } : product
     );
-  }
+    setCartProducts(updatedProducts);
+  };
 
-  function deleteFromCart(id) {
-    setCartProducts((cartProducts) =>
-      cartProducts.filter((currentProduct) => currentProduct.id !== id)
-    );
-  }
+  const deleteFromCart = (id) => {
+    const updatedProducts = cartProducts.filter((product) => product.id !== id);
+    setCartProducts(updatedProducts);
+  };
 
-  function getTotalCost() {
+  const getTotalCost = () => {
     return cartProducts.reduce((totalCost, cartItem) => {
       const productData = getProductData(cartItem.id);
       return totalCost + productData.price * cartItem.quantity;
     }, 0);
-  }
+  };
 
   const contextValue = {
     items: cartProducts,
@@ -89,6 +74,7 @@ export function CartProvider({ children }) {
     deleteFromCart,
     updateCart,
     getTotalCost,
+    getProductData, // Include getProductData in the context value
   };
 
   return (

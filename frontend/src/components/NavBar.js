@@ -12,6 +12,13 @@ import {
   Box,
   Link,
   Image,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
 } from "@chakra-ui/react";
 import {
   MdDarkMode,
@@ -21,61 +28,36 @@ import {
 } from "react-icons/md";
 import { CartContext } from "../CartContext";
 import Logo from "../img/guizao-flores.png";
+import CartProduct from "./CartProduct";
 
-const NavBar = ({ categories, onSelectCategory, onSearch }) => {
+const NavBar = ({ categories, onSelectCategory }) => {
   const navData = [
-    {
-      name: "Início",
-      href: "/",
-    },
-    {
-      name: "Sobre nós",
-      href: "aboutus",
-    },
-    {
-      name: "Produtos",
-      href: "products",
-    },
-    {
-      name: "Contato",
-      href: "contact",
-    },
+    { name: "Início", href: "/" },
+    { name: "Sobre nós", href: "aboutus" },
+    { name: "Produtos", href: "products" },
+    { name: "Contato", href: "contact" },
   ];
 
   const accountData = [
-    {
-      name: "Entrar",
-      href: "signin",
-    },
-    {
-      name: "Cadastrar-se",
-      href: "signup",
-    },
+    { name: "Entrar", href: "signin" },
+    { name: "Cadastrar-se", href: "signup" },
   ];
 
   const { colorMode, toggleColorMode } = useColorMode();
-  const [color, setColor] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const cart = useContext(CartContext);
-  const [show, setShow] = useState(false);
-  const [addToCartClicked, setAddToCartClicked] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-    setAddToCartClicked(false);
-  };
-  const handleShow = () => setShow(true);
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
   );
-  const changeColor = () => {
-    if (window.scrollY >= 90) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
+
+  const handleCartClick = () => {
+    setShowModal(true);
   };
 
-  window.addEventListener("scroll", changeColor);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <Box
@@ -124,12 +106,40 @@ const NavBar = ({ categories, onSelectCategory, onSearch }) => {
             </Menu>
           </Box>
           <Box>
-            <Button variant="ghost" onClick={handleShow}>
+            <Button variant="ghost" onClick={handleCartClick}>
               <MdShoppingCart /> ({productsCount})
             </Button>
           </Box>
         </Stack>
       </Flex>
+      <Modal isOpen={showModal} onClose={handleCloseModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Carrinho de Compras</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {cart.items.map((product) => (
+              <CartProduct
+                key={product.id}
+                id={product.id}
+                quantity={product.quantity}
+                name={product.name}
+              />
+            ))}
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              bg={colorMode === "light" ? "#405B18" : "greenyellow"}
+              color={colorMode === "light" ? "whitesmoke" : "gray.800"}
+              _hover={{ opacity: "70%" }}
+              mr={3}
+              onClick={handleCloseModal}
+            >
+              Fechar
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };

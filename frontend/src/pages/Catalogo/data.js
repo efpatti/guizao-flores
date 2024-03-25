@@ -212,7 +212,10 @@ function getProductData(id) {
   for (const category of categoriesStore) {
     const product = category.products.find((product) => product.id === id);
     if (product) {
-      return product;
+      const price = parseFloat(product.price.replace(",", "."));
+      const oldPrice = parseFloat(product.old_price.replace(",", "."));
+      const name = product.name;
+      return { ...product, price, old_price: oldPrice, name };
     }
   }
   console.log("Product data does not exist for ID: " + id);

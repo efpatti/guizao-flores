@@ -11,9 +11,9 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <CartProvider>
-      <ChakraProvider>
-        <NavBar />
-        <Router>
+      <Router>
+        <ChakraProvider>
+          <NavBar />
           <Routes>
             <Route index element={<Home />} />
             <Route path="aboutus" element={<AboutUs />} />
@@ -21,8 +21,8 @@ function App() {
             <Route path="payment" element={<Pagamento />} />
             <Route path="contact" element={<Contato />} />
           </Routes>
-        </Router>
-      </ChakraProvider>
+        </ChakraProvider>
+      </Router>
     </CartProvider>
   );
 }

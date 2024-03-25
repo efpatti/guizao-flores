@@ -1,12 +1,10 @@
+import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
-import { useContext } from "react";
-import { getProductData } from "../productsStore";
+import { Text, Link, useColorMode } from "@chakra-ui/react";
 
-function CartProduct(props) {
+function CartProduct({ id, quantity }) {
   const cart = useContext(CartContext);
-  const id = props.id;
-  const quantity = props.quantity;
-  const productData = getProductData(id);
+  const productData = cart.getProductData(id);
 
   const formatPrice = (price) => {
     return price.toLocaleString("pt-BR", {
@@ -17,15 +15,19 @@ function CartProduct(props) {
 
   const totalPrice = quantity * productData.price;
   const formattedTotalPrice = formatPrice(totalPrice);
+  const { colorMode } = useColorMode();
 
   return (
     <>
-      <h3 className="title4">{productData.title}</h3>
-      <p className="title4">{quantity} total</p>
-      <p className="title4">{formattedTotalPrice}</p>
-      <a href="#1" className="links" onClick={() => cart.deleteFromCart(id)}>
+      <Text fontSize="md">{productData.name}</Text>
+      <Text fontSize="xs">{quantity} total</Text>
+      <Text fontSize="sm">{formattedTotalPrice}</Text>
+      <Link
+        onClick={() => cart.deleteFromCart(id)}
+        color={colorMode === "light" ? "#405B18" : "greenyellow"}
+      >
         Remover
-      </a>
+      </Link>
       <hr></hr>
     </>
   );
