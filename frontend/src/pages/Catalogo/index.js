@@ -17,100 +17,99 @@ function Catalogo() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId === selectedCategory ? null : categoryId);
+    setSelectedCategory(categoryId);
   };
 
   return (
-    <Flex mt="10rem" justify="center">
-      <Stack direction="column" spacing="5px" maxW="70%">
-        <Flex justify="center">
-          <Grid templateColumns="repeat(2, 1fr)" gap="1em">
-            {categoriesStore.map((category) => (
-              <Box key={category.id}>
-                <Button
-                  onClick={() => handleCategoryClick(category.id)}
-                  isActive={selectedCategory === category.id}
-                >
-                  {category.name}
-                </Button>
-              </Box>
-            ))}
-          </Grid>
-        </Flex>
-        <Box>
-          {categoriesStore.map((category) => (
-            <div
-              key={category.id}
-              style={{
-                display:
-                  selectedCategory === category.id || !selectedCategory
-                    ? "block"
-                    : "none",
-              }}
-            >
-              <Grid templateColumns="repeat(4, 1fr)" gap="10px">
-                {category.products.map((product) => (
-                  <Box
-                    key={product.id}
-                    _hover={{ cursor: "pointer", boxShadow: "lg" }}
-                    borderRadius="sm"
-                    p="2"
+    <Box mt="10rem">
+      <Flex justify="center">
+        <Stack direction="column" spacing="5px" maxW="70%">
+          <Flex justify="center">
+            <Grid templateColumns="repeat(5, 1fr)">
+              {categoriesStore.map((category) => (
+                <Box key={category.id}>
+                  <Button
+                    onClick={() => handleCategoryClick(category.id)}
+                    isActive={selectedCategory === category.id}
                   >
-                    <Text
-                      as="mark"
-                      bg={colorMode === "light" ? "#405B18" : "greenyellow"}
-                      borderRadius="md"
-                      color={colorMode === "light" ? "whitesmoke" : "gray.800"}
+                    {category.name}
+                  </Button>
+                </Box>
+              ))}
+            </Grid>
+          </Flex>
+          <Box>
+            {categoriesStore.map((category) => (
+              <div
+                key={category.id}
+                style={{
+                  display:
+                    selectedCategory === category.id || !selectedCategory
+                      ? "block"
+                      : "none",
+                }}
+              >
+                <Grid templateColumns="repeat(4, 1fr)" gap="1rem">
+                  {category.products.map((product) => (
+                    <Box
+                      key={product.id}
+                      _hover={{ cursor: "pointer", boxShadow: "lg" }}
+                      borderRadius="sm"
+                      p="2"
+                      position="relative"
                     >
-                      {(
-                        ((parseFloat(product.old_price) -
-                          parseFloat(product.price)) /
-                          parseFloat(product.old_price)) *
-                        100
-                      ).toFixed(0)}
-                      %
-                    </Text>
-                    <Image src={product.img} />
-                    <Text
-                      fontWeight="md"
-                      color={colorMode === "light" ? "gray.600" : "gray.300"}
-                      p="3"
-                    >
-                      {product.name}
-                    </Text>
-                    <Stack direction="row">
-                      <Box>
-                        <ProductCard product={product} />
-                      </Box>
-                      <Box ml="auto">
+                      <Image src={product.img} />
+                      <Box m="3" mb="5rem">
                         <Text
-                          fontWeight="semibold"
-                          fontSize="lg"
-                          color={
-                            colorMode === "light" ? "gray.700" : "gray.200"
-                          }
-                        >
-                          ${product.price}
-                        </Text>
-                        <Text
-                          as="s"
                           fontSize="sm"
                           color={
-                            colorMode === "light" ? "gray.500" : "gray.300"
+                            colorMode === "light" ? "gray.600" : "gray.300"
                           }
+                          m="2"
                         >
-                          ${product.old_price}
+                          {product.name}
                         </Text>
                       </Box>
-                    </Stack>
-                  </Box>
-                ))}
-              </Grid>
-            </div>
-          ))}
-        </Box>
-      </Stack>
-    </Flex>
+                      <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                        position="absolute"
+                        bottom="5"
+                        left="5"
+                        right="5"
+                      >
+                        <ProductCard product={product} />
+                        <Box>
+                          <Text
+                            fontWeight="semibold"
+                            fontSize="lg"
+                            color={
+                              colorMode === "light" ? "gray.700" : "gray.200"
+                            }
+                          >
+                            ${product.price}
+                          </Text>
+                          <Text
+                            as="s"
+                            fontSize="sm"
+                            color={
+                              colorMode === "light" ? "gray.500" : "gray.300"
+                            }
+                          >
+                            ${product.old_price}
+                          </Text>
+                        </Box>
+                      </Stack>
+                    </Box>
+                  ))}
+                </Grid>
+              </div>
+            ))}
+          </Box>
+        </Stack>
+      </Flex>
+    </Box>
   );
 }
 

@@ -77,6 +77,13 @@ const NavBar = ({ categories, onSelectCategory }) => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const formatPrice = (price) => {
+    return price.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
+
   return (
     <>
       <Box
@@ -166,15 +173,26 @@ const NavBar = ({ categories, onSelectCategory }) => {
             <ModalHeader>Carrinho de Compras</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              {cart.items.map((product) => (
-                <CartProduct
-                  key={product.id}
-                  id={product.id}
-                  quantity={product.quantity}
-                  name={product.name}
-                />
-              ))}
+              {productsCount > 0 ? (
+                <>
+                  {cart.items.map((product) => (
+                    <CartProduct
+                      key={product.id}
+                      id={product.id}
+                      quantity={product.quantity}
+                      name={product.name}
+                    />
+                  ))}
+                  <Text fontSize="md">
+                    <Text as="b">Total:</Text>{" "}
+                    {formatPrice(cart.getTotalCost())}
+                  </Text>
+                </>
+              ) : (
+                <Text>Você não tem itens no carrinho</Text>
+              )}
             </ModalBody>
+
             <ModalFooter>
               <Button
                 bg={colorMode === "light" ? "#405B18" : "greenyellow"}
@@ -201,7 +219,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
           borderRadius="full"
           onClick={scrollToTop}
           _hover={{ opacity: "70%" }}
-          zIndex="7"
+          zIndex="5"
           bg={colorMode === "light" ? "#405B18" : "greenyellow"}
           color={colorMode === "light" ? "whitesmoke" : "gray.800"}
         >
