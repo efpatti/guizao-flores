@@ -1,7 +1,13 @@
 import React from "react";
 import "./Contato.css";
 import { Container, Form, Image, Row, Col } from "react-bootstrap";
-import { Input, Textarea, Button, useColorMode } from "@chakra-ui/react";
+import {
+  Input,
+  Textarea,
+  Button,
+  useColorMode,
+  useToast,
+} from "@chakra-ui/react";
 import Arrow from "../../img/arrow-right.svg";
 import ImgRight from "../../img/Pegue a flor.png";
 import Phone from "../../img/telephone.svg";
@@ -10,6 +16,7 @@ import Email from "../../img/envelope.svg";
 import { Box } from "@chakra-ui/react";
 function Contato() {
   const { colorMode } = useColorMode();
+  const toast = useToast();
   return (
     <Box mt="8.5rem">
       <div className="body">
@@ -20,7 +27,7 @@ function Contato() {
             className="contact-left"
           >
             <div className="contact-left-title">
-              <h2>Contate-nos</h2>
+              <h2>Contato-nos</h2>
               <hr
                 className={
                   colorMode === "light"
@@ -29,34 +36,39 @@ function Contato() {
                 }
               />
             </div>
-            <input
-              type="hidden"
-              name="access_key"
-              value="bbcff95f-4350-474d-99b7-469ce95ebcafE"
-            ></input>
+            <input type="hidden" name="access_key"></input>
             <Input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="Nome"
               className="contact-inputs"
               required
             />
             <Input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Email"
               className="contact-inputs"
               required
             />
             <Textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="Escreva sua mensagem aqui"
               className="contact-inputs"
               required
             ></Textarea>
-            <Button type="submit">
-              {" "}
-              submit <Image src={Arrow} />{" "}
+            <Button
+              onClick={() =>
+                toast({
+                  title: "Mensagem enviada!",
+                  description: "Sua mensagem foi enviada com sucesso.",
+                  status: "success",
+                  duration: 9000,
+                  isClosable: true,
+                })
+              }
+            >
+              Show Toast
             </Button>
           </Form>
 
