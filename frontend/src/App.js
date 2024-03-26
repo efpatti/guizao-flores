@@ -4,9 +4,9 @@ import { CartProvider } from "./CartContext";
 import Home from "./pages/Homepage";
 import AboutUs from "./pages/AaboutUs";
 import Catalogo from "./pages/Catalogo";
-import Pagamento from "./pages/Pagamento";
 import Contato from "./pages/Contato";
 import NavBar from "./components/NavBar";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="products" element={<Catalogo />} />
-            <Route path="payment" element={<Pagamento />} />
+            <Route path="payment" element={<Payment />} />
             <Route path="contact" element={<Contato />} />
           </Routes>
         </ChakraProvider>
