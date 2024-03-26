@@ -27,7 +27,7 @@ function Contato() {
             className="contact-left"
           >
             <div className="contact-left-title">
-              <h2>Contato-nos</h2>
+              <h2>Contate-nos</h2>
               <hr
                 className={
                   colorMode === "light"
