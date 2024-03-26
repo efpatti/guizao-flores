@@ -139,7 +139,7 @@ function Home() {
       Descricao1: "descriçao da acessorio",
     },
   ];
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <section>
       <Carousel className="carrosel">
@@ -344,37 +344,41 @@ function Home() {
       </Container>
       <Flex justify="center" align="center" mt="3rem">
         <Box boxShadow="2xl" rounded="md">
-          <Text textAlign="center" fontSize="3xl">
+          <Text textAlign="center" fontSize="35">
             Dicas de cuidado
           </Text>
           <Stack direction="column" spacing="5px">
             <Box>
               <Stack direction="row" spacing="5px">
-                <Box borderLeft="1px" boxSize="xs" p="5px">
-                  <Text fontSize="2xl">Corte os caules</Text>
+                <div className={colorMode === "light" ? "linha-lado-1" : "linha-lado-1s-dark"} >
+                <Box className="boxi2" boxSize="xs"  >
+                  <Text fontSize="27">Corte os caules</Text>
                   <Text fontSize="md">
                     Ao receber flores, corte cerca de 2 a 5 centímetros dos
                     caules em um ângulo de 45 graus. Isso ajuda na absorção de
                     água.
                   </Text>
                 </Box>
+                </div>
                 <Box>
-                  <Image src={florfofa} />
+                  <Image className="fotinha2" boxSize="270px" src={florfofa} />
                 </Box>
               </Stack>
             </Box>
             <Box>
               <Stack direction="row" spacing="5px">
                 <Box>
-                  <Image src={florfofa2} />
+                  <Image className="fotinha" boxSize="250px" src={florfofa2} />
                 </Box>
-                <Box borderRight="1px" boxSize="xs" p="5px">
-                  <Text fontSize="2xl">Use água limpa e fresca</Text>
+                <div className={colorMode === "light" ? "linha-lado-2" : "linha-lado-2-dark"} >
+                <Box className="boxi" boxSize="280px" >
+                  <Text fontSize="26">Use água limpa e fresca</Text>
                   <Text fontSize="md">
                     Troque a água do vaso regularmente, a cada dois dias, para
                     evitar a proliferação de bactérias.
                   </Text>
                 </Box>
+                </div>
               </Stack>
             </Box>
           </Stack>
