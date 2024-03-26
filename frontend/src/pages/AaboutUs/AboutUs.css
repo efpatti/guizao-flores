@@ -9,6 +9,12 @@
   padding: 20px;
   font-weight: lighter;
 }
+.boxtextonedark {
+  border-top: solid 1px rgb(255, 255, 255);
+  border-left: solid 1px rgb(255, 255, 255);
+  padding: 20px;
+  font-weight: lighter;
+}
 .titulobox {
   background-color: linear-gradient(#56626b, #4c6c81, #083263);
 }

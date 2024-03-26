@@ -6,7 +6,6 @@
 .body {
   font-size: 50px;
   font-weight: lighter;
-  background: linear-gradient(#ffdad5, #fff7f9);
 }
 .contact-container {
   height: 100vh;
@@ -22,15 +21,23 @@
 }
 .contact-left-title h2 {
   font-weight: 600;
-  color: rgb(0, 0, 0);
+
   font-size: 40px;
   margin-bottom: 5px;
 }
-.contact-left-title hr {
+.contact-left-title-hr {
   border: none;
   width: 120px;
   height: 5px;
-  background-color: #000000;
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.contact-left-title-hr-dark {
+  background-color: white;
+  border: none;
+  width: 120px;
+  height: 5px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -43,7 +50,7 @@
   font-weight: 500;
   color: #666 !important;
   border-radius: 50px !important;
-  background: #ffffff !important;
+  background: #e1dada !important;
 }
 .contact-left textarea {
   height: 140px;

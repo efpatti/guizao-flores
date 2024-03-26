@@ -1,10 +1,11 @@
 import FotoUm from "../../img/snum.jpg";
 import Image from "react-bootstrap/Image";
 import { Container, Row, Col } from "react-bootstrap";
-import { Box } from "@chakra-ui/react";
+import { Box, useColorMode } from "@chakra-ui/react";
 import "./AboutUs.css";
 import FotoDois from "../../img/sndois.jpg";
 import FotoTres from "../../img/Entregamos para todo Brasil.png";
+import FotoTresDarkMode from "../../img/entregadarkmode.png";
 import VideoDaTropa from "../../videos/Guizäo Flores é.mp4";
 import LogoUm from "../../img/Design sem nome.png";
 import LogoDois from "../../img/Design sem nome (1).png";
@@ -13,6 +14,7 @@ import LogoQuatro from "../../img/Design sem nome (3).png";
 import LogoCinco from "../../img/Design sem nome (4).png";
 import LogoSeis from "../../img/Design sem nome (5).png";
 function SobreNos() {
+  const { colorMode } = useColorMode();
   return (
     <Box mt="6rem">
       <Container>
@@ -27,7 +29,9 @@ function SobreNos() {
           <Col>
             <Image style={{ width: "500px" }} src={FotoUm} />
           </Col>
-          <Col className="boxtextone">
+          <Col
+            className={colorMode === "light" ? "boxtextone" : "boxtextonedark"}
+          >
             <h1 className="titulobox gradient">Quem é a Guizäo flores?</h1>
             <div className="mt-4 mb-5 textoum">
               <p>
@@ -53,7 +57,9 @@ function SobreNos() {
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col className="boxtextone mt-3">
+          <Col
+            className={colorMode === "light" ? "boxtextone" : "boxtextonedark"}
+          >
             <h1 className="titulobox gradientdois">
               Como surgiu a Guizäo flores?
             </h1>
@@ -92,7 +98,10 @@ function SobreNos() {
         <Row>
           <Col>
             {" "}
-            <Image style={{}} src={FotoTres} />
+            <Image
+              style={{}}
+              src={colorMode === "light" ? FotoTres : FotoTresDarkMode}
+            />
           </Col>
         </Row>
       </Container>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contato.css";
 import { Container, Form, Image, Row, Col } from "react-bootstrap";
-import { Input, Textarea, Button } from "@chakra-ui/react";
+import { Input, Textarea, Button, useColorMode } from "@chakra-ui/react";
 import Arrow from "../../img/arrow-right.svg";
 import ImgRight from "../../img/Pegue a flor.png";
 import Phone from "../../img/telephone.svg";
@@ -9,6 +9,7 @@ import map from "../../img/geo-alt.svg";
 import Email from "../../img/envelope.svg";
 import { Box } from "@chakra-ui/react";
 function Contato() {
+  const { colorMode } = useColorMode();
   return (
     <Box mt="8.5rem">
       <div className="body">
@@ -19,8 +20,14 @@ function Contato() {
             className="contact-left"
           >
             <div className="contact-left-title">
-              <h2>Cadastre-se</h2>
-              <hr />
+              <h2>Contate-nos</h2>
+              <hr
+                className={
+                  colorMode === "light"
+                    ? "contact-left-title-hr"
+                    : "contact-left-title-hr-dark"
+                }
+              />
             </div>
             <input
               type="hidden"
