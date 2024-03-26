@@ -201,6 +201,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
           borderRadius="full"
           onClick={scrollToTop}
           _hover={{ opacity: "70%" }}
+          zIndex="7"
           bg={colorMode === "light" ? "#405B18" : "greenyellow"}
           color={colorMode === "light" ? "whitesmoke" : "gray.800"}
         >
