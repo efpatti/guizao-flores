@@ -9,7 +9,7 @@ import {
   Link,
   Flex,
 } from "@chakra-ui/react";
-import { MdShoppingCart, MdDelete } from "react-icons/md";
+import { MdShoppingCart } from "react-icons/md";
 import { CartContext } from "../CartContext";
 
 function ProductCard({ product }) {
