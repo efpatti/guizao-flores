@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Flex,
   FormControl,
@@ -13,6 +13,7 @@ import "../Payment/pagamento.css";
 import pix from "../../img/pix.jpeg";
 import guizao from "../../img/debit&credit.jpg";
 import QR from "../../img/qrcode-pix.png";
+import { MdOutlineContentCopy } from "react-icons/md";
 
 function Payment() {
   const [exibirForms, setExibirForms] = useState(true);
@@ -41,7 +42,16 @@ function Payment() {
           </div>
         ) : (
           <div className="text">
-            <img src={QR} width={320} />
+            <img className="qrcode" src={QR} width={200} />
+            <b className="textQR">Copie o código</b>
+
+            <div className="boxCode ">
+              <div>
+                <p className="codepix">
+                  <MdOutlineContentCopy />
+                </p>
+              </div>
+            </div>
           </div>
         )}
       </div>

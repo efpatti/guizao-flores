@@ -30,3 +30,23 @@
   margin-top: 20px;
   margin-left: 40px;
 }
+.qrcode {
+  margin-left: 75px;
+}
+.textQR {
+  margin-left: 110px;
+}
+.boxCode {
+  width: 250px;
+  background-color: rgb(236, 36, 36);
+  border-radius: 5%;
+  height: 1px;
+  margin-left: 40px;
+}
+.codepix {
+  margin-left: 110px;
+  width: 30px;
+  height: 25px;
+  background-color: rgb(236, 36, 36);
+  border-radius: 50%;
+}
