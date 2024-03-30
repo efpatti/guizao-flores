@@ -13,14 +13,14 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react";
-import fototeste from "../../img/mega-buque-com-girassois-e-rosas-brancas.webp";
+import fototeste from "../../img/mega-buque-com-girassois-e-rosas-brancas-removebg-preview.png";
 import bannerOrquidea from "../../img/banner-orquidea.webp";
 import bannerOutono from "../../img/banner-outono.webp";
 import bannerPascoa from "../../img/banner-pascoa.webp";
 import bannerabraco from "../../img/banner-abraco.webp";
-import promo2 from "../../img/buque-presente-gerberas-vermelhas.webp";
-import promo33 from "../../img/buque-de-gypsophila-encantada-azul-claro.webp";
-import promo3 from "../../img/flores-secas-roxas.webp";
+import promo2 from "../../img/buque-presente-gerberas-vermelhas-removebg-preview.png";
+import promo33 from "../../img/buque-de-gypsophila-encantada-azul-claro-removebg-preview.png";
+import promo3 from "../../img/flores-secas-roxas-removebg-preview.png";
 import acessorio from "../../img/regador-fofo.jpg";
 import acessorio2 from "../../img/image-removebg-preview (2).png";
 import acessorio3 from "../../img/elefantezur.webp";
@@ -79,28 +79,32 @@ function Home() {
       Imagem: fototeste,
       Preco: "639,00 R$",
       Odpreco: "720,00 R$",
-      Descricao: " Os girassóis são como pequenos artistas do sol, Suas flores gigantes e brilhantes parecem sorrir para o mundo",
+      Descricao:
+        " Os girassóis são como pequenos artistas do sol, Suas flores gigantes e brilhantes parecem sorrir para o mundo",
     },
     {
       nome: "Buquê Presente Gérberas Vermelhas",
       Imagem: promo2,
       Preco: "87,90 R$",
       Odpreco: "125,00 R$",
-      Descricao: " é como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
+      Descricao:
+        " é como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
     },
     {
       nome: "Buquê Poesia de Flores Secas Roxas",
       Imagem: promo3,
       Preco: "89,90 R$",
       Odpreco: "129,00 R$",
-      Descricao: "é como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza.",
+      Descricao:
+        "é como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza.",
     },
     {
       nome: "Buquê de Gypsophila Encantada Azul Claro",
       Imagem: promo33,
       Preco: "165,00 R$",
       Odpreco: "195,90 R$",
-      Descricao: " é como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial. ",
+      Descricao:
+        " é como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial. ",
     },
   ];
   const cardApaixonado = [
@@ -134,19 +138,22 @@ function Home() {
       nome1: "Vaso Cerâmica Azul e Preto",
       Imagem1: acessorio,
       Preco1: "89,90 R$",
-      Descricao1: " Com um design clássico e elegante, o vaso possui um tom de azul profundo e escuro." ,
+      Descricao1:
+        " Com um design clássico e elegante, o vaso possui um tom de azul profundo e escuro.",
     },
     {
       nome1: "Vaso de flor transparente",
       Imagem1: acessorio2,
       Preco1: "47,90 R$",
-      Descricao1: "Imagine um vaso de flor, feito de vidro delicado que brilha suavemente à luz do sol.",
+      Descricao1:
+        "Imagine um vaso de flor, feito de vidro delicado que brilha suavemente à luz do sol.",
     },
     {
       nome1: "Regador de Tropicana  ",
       Imagem1: acessorio3,
       Preco1: "19,99 R$",
-      Descricao1: "regador encantador em forma de pássaro, feito de metal e pintado em cores vibrantes. ",
+      Descricao1:
+        "regador encantador em forma de pássaro, feito de metal e pintado em cores vibrantes. ",
     },
   ];
   const { colorMode } = useColorMode();
@@ -181,7 +188,9 @@ function Home() {
                     <Text className="texto-preco" fontSize="2xl">
                       {card.Preco}
                     </Text>
-                    <Text as='s' fontSize="2x1">{card.Odpreco}</Text>
+                    <Text as="s" fontSize="2x1">
+                      {card.Odpreco}
+                    </Text>
                   </Stack>
                 </CardBody>
                 <Divider />
@@ -234,7 +243,7 @@ function Home() {
             <Col key={index}>
               <Card className="card2" maxW="sm">
                 <CardBody>
-                <Image src={card.Imagem1} />
+                  <Image src={card.Imagem1} />
                   <Stack mt="1  " spacing="3">
                     <Heading size="md">{card.nome1}</Heading>
                     <Text>{card.Descricao1}</Text>
@@ -361,15 +370,21 @@ function Home() {
           <Stack direction="column" spacing="5px">
             <Box>
               <Stack direction="row" spacing="5px">
-                <div className={colorMode === "light" ? "linha-lado-1" : "linha-lado-1s-dark"} >
-                <Box className="boxi2" boxSize="xs"  >
-                  <Text fontSize="27">Corte os caules</Text>
-                  <Text fontSize="md">
-                    Ao receber flores, corte cerca de 2 a 5 centímetros dos
-                    caules em um ângulo de 45 graus. Isso ajuda na absorção de
-                    água.
-                  </Text>
-                </Box>
+                <div
+                  className={
+                    colorMode === "light"
+                      ? "linha-lado-1"
+                      : "linha-lado-1s-dark"
+                  }
+                >
+                  <Box className="boxi2" boxSize="xs">
+                    <Text fontSize="27">Corte os caules</Text>
+                    <Text fontSize="md">
+                      Ao receber flores, corte cerca de 2 a 5 centímetros dos
+                      caules em um ângulo de 45 graus. Isso ajuda na absorção de
+                      água.
+                    </Text>
+                  </Box>
                 </div>
                 <Box>
                   <Image className="fotinha2" boxSize="270px" src={florfofa} />
@@ -381,14 +396,18 @@ function Home() {
                 <Box>
                   <Image className="fotinha" boxSize="250px" src={florfofa2} />
                 </Box>
-                <div className={colorMode === "light" ? "linha-lado-2" : "linha-lado-2-dark"} >
-                <Box className="boxi" boxSize="280px" >
-                  <Text fontSize="26">Use água limpa e fresca</Text>
-                  <Text fontSize="md">
-                    Troque a água do vaso regularmente, a cada dois dias, para
-                    evitar a proliferação de bactérias.
-                  </Text>
-                </Box>
+                <div
+                  className={
+                    colorMode === "light" ? "linha-lado-2" : "linha-lado-2-dark"
+                  }
+                >
+                  <Box className="boxi" boxSize="280px">
+                    <Text fontSize="26">Use água limpa e fresca</Text>
+                    <Text fontSize="md">
+                      Troque a água do vaso regularmente, a cada dois dias, para
+                      evitar a proliferação de bactérias.
+                    </Text>
+                  </Box>
                 </div>
               </Stack>
             </Box>

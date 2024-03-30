@@ -7,6 +7,7 @@ import Catalogo from "./pages/Catalogo";
 import Contato from "./pages/Contato";
 import NavBar from "./components/NavBar";
 import Payment from "./pages/Payment";
+import ProductDetails from "./pages/Catalogo/productDetails";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
             <Route index element={<Home />} />
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="products" element={<Catalogo />} />
+            <Route
+              path="products/details/:productId"
+              element={<ProductDetails />}
+            />
             <Route path="payment" element={<Payment />} />
             <Route path="contact" element={<Contato />} />
           </Routes>

@@ -7,15 +7,12 @@ import {
   Box,
   Image,
   useColorMode,
-  Button,
   List,
   ListItem,
-  Checkbox,
 } from "@chakra-ui/react";
 import { filters, products } from "./dataStore";
-import ProductCard from "../../components/ProductCard";
-import { RiCheckboxBlankCircleLine } from "react-icons/ri";
 import { CheckboxStyled } from "./components/CheckBoxStyled";
+import { Link } from "react-router-dom";
 
 function Catalogo() {
   const { colorMode } = useColorMode();
@@ -68,7 +65,8 @@ function Catalogo() {
                             roundedFull
                           />
                           <Text fontWeight="100">
-                            {category.name} ({category.name.count})
+                            {category.name} (
+                            {getCategoryItemCount(category.name)})
                           </Text>
                         </Stack>
                       </ListItem>
@@ -81,51 +79,55 @@ function Catalogo() {
           <Box>
             <Grid templateColumns="repeat(4, 1fr)" gap="1rem">
               {filteredProducts.map((product) => (
-                <Box
-                  key={product.id}
-                  _hover={{ cursor: "pointer", boxShadow: "lg" }}
-                  borderRadius="sm"
-                  p="2"
-                  position="relative"
-                >
-                  <Image src={product.img} />
-                  <Box m="3" mb="5rem">
-                    <Text
-                      fontSize="sm"
-                      color={colorMode === "light" ? "gray.600" : "gray.300"}
-                      m="2"
-                    >
-                      {product.name}
-                    </Text>
-                  </Box>
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    position="absolute"
-                    bottom="5"
-                    left="5"
-                    right="5"
+                <Link key={product.id} to={`/products/details/${product.id}`}>
+                  <Box
+                    _hover={{ cursor: "pointer", boxShadow: "lg" }}
+                    borderRadius="sm"
+                    p="2"
+                    position="relative"
                   >
-                    <ProductCard product={product} />
-                    <Box>
+                    <Image src={product.img} />
+                    <Box m="3" mb="5rem">
                       <Text
-                        fontWeight="semibold"
-                        fontSize="lg"
-                        color={colorMode === "light" ? "gray.700" : "gray.200"}
-                      >
-                        ${product.price}
-                      </Text>
-                      <Text
-                        as="s"
                         fontSize="sm"
-                        color={colorMode === "light" ? "gray.500" : "gray.300"}
+                        color={colorMode === "light" ? "gray.600" : "gray.300"}
+                        m="2"
                       >
-                        ${product.old_price}
+                        {product.name}
                       </Text>
                     </Box>
-                  </Stack>
-                </Box>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      position="absolute"
+                      bottom="5"
+                      left="5"
+                      right="5"
+                    >
+                      <Box>
+                        <Text
+                          fontWeight="semibold"
+                          fontSize="lg"
+                          color={
+                            colorMode === "light" ? "gray.700" : "gray.200"
+                          }
+                        >
+                          ${product.price}
+                        </Text>
+                        <Text
+                          as="s"
+                          fontSize="sm"
+                          color={
+                            colorMode === "light" ? "gray.500" : "gray.300"
+                          }
+                        >
+                          ${product.old_price}
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </Box>
+                </Link>
               ))}
             </Grid>
           </Box>
