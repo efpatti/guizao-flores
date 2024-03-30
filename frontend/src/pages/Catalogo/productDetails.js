@@ -1,7 +1,8 @@
+import { useParams } from "react-router-dom";
+import { products } from "./dataStore";
 function ProductDetails() {
   const { productId } = useParams();
 
-  // Encontre o produto com base no ID nos seus dados de produtos
   const product = products.find((p) => p.id === productId);
 
   return (
