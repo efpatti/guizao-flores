@@ -27,13 +27,12 @@ function Catalogo() {
 
   const handleCategoryClick = (categoryId) => {
     if (selectedCategory === categoryId) {
-      setSelectedCategory(null); // Desmarcar se já estiver selecionado
+      setSelectedCategory(null);
     } else {
       setSelectedCategory(categoryId);
     }
   };
 
-  // Função para filtrar os produtos com base na categoria selecionada
   const filteredProducts = selectedCategory
     ? products.filter((product) =>
         product.category_item.some(
@@ -78,7 +77,6 @@ function Catalogo() {
             </Stack>
           </Flex>
           <Flex flexWrap="wrap" justify="center">
-            {/* Utilize Flex ao redor do Grid para manter a linha dos produtos */}
             <Grid templateColumns="repeat(4, 1fr)" gap="1rem">
               {filteredProducts.map((product) => (
                 <Box

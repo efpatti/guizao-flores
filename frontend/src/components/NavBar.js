@@ -35,15 +35,15 @@ import CartProduct from "./CartProduct";
 const NavBar = ({ categories, onSelectCategory }) => {
   const navData = [
     { name: "Início", href: "/" },
-    { name: "Sobre nós", href: "aboutus" },
-    { name: "Produtos", href: "products" },
-    { name: "Contato", href: "contact" },
-    { name: "Pagamento", href: "payment" },
+    { name: "Sobre nós", href: "/aboutus" },
+    { name: "Produtos", href: "/products" },
+    { name: "Contato", href: "/contact" },
+    { name: "Pagamento", href: "/payment" },
   ];
 
   const accountData = [
-    { name: "Entrar", href: "signin" },
-    { name: "Cadastrar-se", href: "signup" },
+    { name: "Entrar", href: "/signin" },
+    { name: "Cadastrar-se", href: "/signup" },
   ];
 
   // change NavBar when scrolling
