@@ -1,7 +1,7 @@
 .elojob {
   background-color: rgb(252, 252, 252);
   width: 350px;
-  height: 300px;
+  height: 400px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   margin-left: 450px;
   margin-top: 70px;
@@ -9,7 +9,7 @@
 .caixa-berde {
   background-color: rgb(252, 252, 252);
   width: 350px;
-  height: 300px;
+  height: 400px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   margin-left: 450px;
   margin-top: 70px;
@@ -38,15 +38,42 @@
 }
 .boxCode {
   width: 250px;
-  background-color: rgb(236, 36, 36);
+  background-color: #405b18;
   border-radius: 5%;
   height: 1px;
   margin-left: 40px;
 }
 .codepix {
-  margin-left: 110px;
+  margin-left: 100px;
   width: 30px;
   height: 25px;
-  background-color: rgb(236, 36, 36);
   border-radius: 50%;
+}
+.icon {
+  margin-left: 0px;
+  background-color: #405b18; /* Cor de fundo */
+  border: none; /* Remove a borda */
+  color: white; /* Cor do texto */
+  padding: 15px 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove a decoração do texto */
+  display: inline-block; /* Exibe como bloco em linha */
+  font-size: 16px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem externa */
+  transition-duration: 0.4s; /* Duração da transição */
+  cursor: pointer; /* Cursor ao passar por cima */
+  border-radius: 8px; /* Raio das bordas */
+}
+.irmaozinho {
+  width: 250px;
+  height: 00px;
+}
+.CVV {
+  width: 100px;
+}
+.ultima {
+  display: flex;
+}
+.data {
+  margin-left: 25%;
 }
