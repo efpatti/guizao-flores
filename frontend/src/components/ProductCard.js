@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   Box,
@@ -12,7 +12,7 @@ import {
 import { MdShoppingCart } from "react-icons/md";
 import { CartContext } from "../CartContext";
 
-function ProductCard({ product }) {
+function ProductCard({ product, buttonText }) {
   const { colorMode } = useColorMode();
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(product.id);
@@ -75,8 +75,13 @@ function ProductCard({ product }) {
           borderRadius="full"
           color={colorMode === "light" ? "whitesmoke" : "gray.800"}
           bg={colorMode === "light" ? "#405B18" : "greenyellow"}
+          fontSize="xs"
+          textTransform="uppercase"
         >
-          <MdShoppingCart />
+          {buttonText}
+          <Box ml="0.5rem">
+            <MdShoppingCart />
+          </Box>
         </Button>
       )}
     </Grid>

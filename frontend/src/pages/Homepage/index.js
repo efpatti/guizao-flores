@@ -21,9 +21,9 @@ import bannerabraco from "../../img/banner-abraco.webp";
 import promo2 from "../../img/buque-presente-gerberas-vermelhas-removebg-preview.png";
 import promo33 from "../../img/buque-de-gypsophila-encantada-azul-claro-removebg-preview.png";
 import promo3 from "../../img/flores-secas-roxas-removebg-preview.png";
-import acessorio from "../../img/regador-fofo.jpg";
+import acessorio from "../../img/danete.png";
 import acessorio2 from "../../img/image-removebg-preview (2).png";
-import acessorio3 from "../../img/elefantezur.webp";
+import acessorio3 from "../../img/barronelius.png";
 import { React, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "../Homepage/Homepage.css";
@@ -34,6 +34,10 @@ import apaixonado from "../../img/Apaixonados.png";
 import florfofa from "../../img/flor-fofa-removebg-preview.png";
 import florfofa2 from "../../img/flor-fofa2-removebg-preview.png";
 import florfofa3 from "../../img/flor-fofa3-removebg-preview.png";
+import apaixonado1 from "../../img/product-2.png";
+import apaixonado2 from "../../img/product-5.png";
+import apaixonado3 from "../../img/buque-de-gerberas-coloridas-removebg-preview.png";
+import apaixonado4 from "../../img/product-6.png";
 const buttonStyle = {
   baseStyle: {
     fontWeight: "bold",
@@ -77,83 +81,83 @@ function Home() {
     {
       nome: "Mega Buquê de Girassóis",
       Imagem: fototeste,
-      Preco: "639,00 R$",
-      Odpreco: "720,00 R$",
+      Preco: "639,00",
+      Odpreco: "720,00",
       Descricao:
         " Os girassóis são como pequenos artistas do sol, Suas flores gigantes e brilhantes parecem sorrir para o mundo",
     },
     {
       nome: "Buquê Presente Gérberas Vermelhas",
       Imagem: promo2,
-      Preco: "87,90 R$",
-      Odpreco: "125,00 R$",
+      Preco: "87,90",
+      Odpreco: "125,00",
       Descricao:
-        " é como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
+        " É como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
     },
     {
       nome: "Buquê Poesia de Flores Secas Roxas",
       Imagem: promo3,
-      Preco: "89,90 R$",
-      Odpreco: "129,00 R$",
+      Preco: "89,90",
+      Odpreco: "129,00",
       Descricao:
-        "é como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza.",
+        "É como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza.",
     },
     {
       nome: "Buquê de Gypsophila Encantada Azul Claro",
       Imagem: promo33,
-      Preco: "165,00 R$",
-      Odpreco: "195,90 R$",
+      Preco: "165,00",
+      Odpreco: "195,90",
       Descricao:
-        " é como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial. ",
+        "É como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial. ",
     },
   ];
   const cardApaixonado = [
     {
-      nome2: "buque de fro",
-      Imagem2: fototeste2,
-      Preco2: "50,00 R$",
-      Descricao2: "descriçao do buque de fro",
+      nome2: "Buquê de rosas vermelhas",
+      Imagem2: apaixonado1,
+      Preco2: "250,00",
+      Descricao2: "É uma exuberante e apaixonada expressão de amor e afeto. Cada rosa vermelha simboliza beleza, romance e desejo",
     },
     {
-      nome2: "buque de fro",
-      Imagem2: fototeste2,
-      Preco2: "50,00 R$",
-      Descricao2: "descriçao do buque de fro",
+      nome2: "Buquê de 12 rosas lilás",
+      Imagem2: apaixonado2,
+      Preco2: "120,99",
+      Descricao2: "As rosas lilás simbolizam encanto, admiração e amor à primeira vista, tornando este arranjo floral uma maneira elegante de expressar sentimentos.",
     },
     {
-      nome2: "buque de fro",
-      Imagem2: fototeste2,
-      Preco2: "50,00 R$",
-      Descricao2: "descriçao do buque de fro",
+      nome2: "Buquê de Gérberas Coloridas",
+      Imagem2: apaixonado3,
+      Preco2: "169,90",
+      Descricao2: " Essa diversidade de cores torna o buquê de gérberas uma opção alegre e cheia de vida para presentear alguém especial.",
     },
     {
-      nome2: "buque de fro",
-      Imagem2: fototeste2,
-      Preco2: "50,00 R$",
-      Descricao2: "descriçao do buque de fro",
+      nome2: "Buquê de tulipas",
+      Imagem2: apaixonado4,
+      Preco2: "99,90",
+      Descricao2: "Um buquê de tulipas é uma escolha elegante e sofisticada para presentear alguém especial. As tulipas são flores conhecidas por sua beleza simples e graciosa.",
     },
   ];
   const cardAcessorio = [
     {
       nome1: "Vaso Cerâmica Azul e Preto",
       Imagem1: acessorio,
-      Preco1: "89,90 R$",
+      Preco1: "89,90",
       Descricao1:
         " Com um design clássico e elegante, o vaso possui um tom de azul profundo e escuro.",
     },
     {
       nome1: "Vaso de flor transparente",
       Imagem1: acessorio2,
-      Preco1: "47,90 R$",
+      Preco1: "47,90",
       Descricao1:
         "Imagine um vaso de flor, feito de vidro delicado que brilha suavemente à luz do sol.",
     },
     {
-      nome1: "Regador de Tropicana  ",
+      nome1: "Regador de girasol ",
       Imagem1: acessorio3,
-      Preco1: "19,99 R$",
+      Preco1: "59,90",
       Descricao1:
-        "regador encantador em forma de pássaro, feito de metal e pintado em cores vibrantes. ",
+        "Regador encantador com girasois feito em metal perfeito para e decorar o ambiente ",
     },
   ];
   const { colorMode } = useColorMode();
@@ -186,10 +190,10 @@ function Home() {
                     <Heading size="md">{card.nome}</Heading>
                     <Text>{card.Descricao}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      {card.Preco}
+                      R${card.Preco}
                     </Text>
                     <Text as="s" fontSize="2x1">
-                      {card.Odpreco}
+                      R${card.Odpreco}
                     </Text>
                   </Stack>
                 </CardBody>
@@ -248,7 +252,7 @@ function Home() {
                     <Heading size="md">{card.nome1}</Heading>
                     <Text>{card.Descricao1}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      {card.Preco1}
+                      R${card.Preco1}
                     </Text>
                   </Stack>
                 </CardBody>
@@ -314,7 +318,7 @@ function Home() {
                     <Heading size="md">{card.nome2}</Heading>
                     <Text>{card.Descricao2}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      {card.Preco2}
+                      R${card.Preco2}
                     </Text>
                   </Stack>
                 </CardBody>
@@ -411,8 +415,30 @@ function Home() {
                 </div>
               </Stack>
             </Box>
+            <Box>
+              <Stack direction="row" spacing="5px">
+                <div
+                  className={
+                    colorMode === "light"
+                      ? "linha-lado-1"
+                      : "linha-lado-1s-dark"
+                  }
+                >
+                  <Box className="boxi2" boxSize="xs">
+                    <Text fontSize="27">Lembre-se de trocar a água</Text>
+                    <Text fontSize="md">
+                    Para conservar flores é trocar a água do vaso regularmente. A água deve ser trocada a cada dois dias ou sempre que estiver turva.
+                    </Text>
+                  </Box>
+                </div>
+                <Box>
+                  <Image className="fotinha2" boxSize="270px" src={florfofa3} />
+                </Box>
+              </Stack>
+            </Box>
           </Stack>
         </Box>
+        
       </Flex>
     </section>
   );
