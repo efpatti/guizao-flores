@@ -8,6 +8,7 @@ import Contato from "./pages/Contato";
 import NavBar from "./components/NavBar";
 import Payment from "./pages/Payment";
 import ProductDetails from "./pages/Catalogo/productDetails";
+import Rodape from "./components/Rodape";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="payment" element={<Payment />} />
             <Route path="contact" element={<Contato />} />
           </Routes>
+          <Rodape />
         </ChakraProvider>
       </Router>
     </CartProvider>
