@@ -143,9 +143,7 @@ function Home() {
                     <Text className="texto-preco" fontSize="2xl">
                       R${product.price}
                     </Text>
-                    <Text as="s" fontSize="2x1">
-                      R${product.old_price}
-                    </Text>
+                    
                   </Stack>
                 </CardBody>
                 <Divider />
@@ -175,9 +173,7 @@ function Home() {
                     <Text className="texto-preco" fontSize="2xl">
                       R${product.price}
                     </Text>
-                    <Text as="s" fontSize="2x1">
-                      R${product.old_price}
-                    </Text>
+                  
                   </Stack>
                 </CardBody>
                 <Divider />
