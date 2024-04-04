@@ -94,20 +94,22 @@ function Home() {
   const { colorMode } = useColorMode();
   return (
     <section>
-      <Carousel className="carrosel">
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerabraco} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerOrquidea} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerOutono} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerPascoa} />
-        </Carousel.Item>
-      </Carousel>
+      <Flex justify="center" mt="7rem">
+        <Carousel className="carousel-container">
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerabraco} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerOrquidea} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerOutono} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerPascoa} fluid />
+          </Carousel.Item>
+        </Carousel>
+      </Flex>
 
       <h1 className="letreiro">Promoções de Março</h1>
       <Container className="mb-5 mt-5">
