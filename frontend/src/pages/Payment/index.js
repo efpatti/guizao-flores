@@ -8,11 +8,13 @@ import {
   Radio,
   FormHelperText,
   Input,
+  useColorMode,
+  Box,
 } from "@chakra-ui/react";
 // import { Form } from "react-bootstrap"; // Importe Form do react-bootstrap
 import "../Payment/pagamento.css";
-import pix from "../../img/pix.jpeg";
-import guizao from "../../img/debit&credit.jpg";
+import pix from "../../img/pix.png";
+import guizao from "../../img/debit.png";
 import QR from "../../img/qrcode-pix.png";
 import { MdOutlineContentCopy } from "react-icons/md";
 import Timer from "../../Timer";
@@ -24,9 +26,13 @@ function Payment() {
   const handleClick = () => {
     setExibirForms(!exibirForms);
   };
-
+  const { colorMode } = useColorMode();
   return (
-    <Flex mt="8.5rem">
+    <Flex
+      mt="8.5rem"
+      color={colorMode === "light" ? "black" : "white"}
+      bg={colorMode === "light" ? "white" : "transparent"}
+    >
       <div className={exibirForms ? "elojob" : "caixa-berde"}>
         {exibirForms ? (
           <>
@@ -77,13 +83,17 @@ function Payment() {
         ) : (
           <div className="text">
             <Timer />
-            <img className="qrcode" src={QR} width={200} />
+            <Flex justify="center">
+              <img className="qrcode" src={QR} width={200} />
+            </Flex>
             <b className="textQR">Copie o código</b>
 
             <div className="boxCode ">
               <div>
                 <div className="codepix">
-                  <button className="icon">
+                  <button
+                    className={colorMode === "light" ? "icon" : "icon-black"}
+                  >
                     <MdOutlineContentCopy />
                   </button>
                 </div>
@@ -92,7 +102,10 @@ function Payment() {
           </div>
         )}
       </div>
-      <button className="butao" onClick={handleClick}>
+      <button
+        className={colorMode === "light" ? "butao" : "butao-black"}
+        onClick={handleClick}
+      >
         <img src={exibirForms ? pix : guizao} />
       </button>
     </Flex>

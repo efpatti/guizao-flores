@@ -1,5 +1,4 @@
 .elojob {
-  background-color: rgb(252, 252, 252);
   width: 350px;
   height: 400px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
@@ -7,7 +6,6 @@
   margin-top: 70px;
 }
 .caixa-berde {
-  background-color: rgb(252, 252, 252);
   width: 350px;
   height: 400px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
@@ -21,6 +19,13 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   margin-left: -65px;
 }
+.butao-black {
+  width: 150px;
+  height: 150px;
+  background-color: #1a202c;
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);
+  margin-left: -65px;
+}
 .textPayment {
   margin-left: 60px;
 }
@@ -29,9 +34,6 @@
   height: 0px;
   margin-top: 20px;
   margin-left: 40px;
-}
-.qrcode {
-  margin-left: 75px;
 }
 .textQR {
   margin-left: 110px;
@@ -54,6 +56,21 @@
   background-color: #405b18; /* Cor de fundo */
   border: none; /* Remove a borda */
   color: white; /* Cor do texto */
+  padding: 15px 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove a decoração do texto */
+  display: inline-block; /* Exibe como bloco em linha */
+  font-size: 16px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem externa */
+  transition-duration: 0.4s; /* Duração da transição */
+  cursor: pointer; /* Cursor ao passar por cima */
+  border-radius: 8px; /* Raio das bordas */
+}
+.icon-black {
+  margin-left: 0px;
+  background-color: greenyellow; /* Cor de fundo */
+  border: none; /* Remove a borda */
+  color: black; /* Cor do texto */
   padding: 15px 20px; /* Espaçamento interno */
   text-align: center; /* Alinhamento do texto */
   text-decoration: none; /* Remove a decoração do texto */
