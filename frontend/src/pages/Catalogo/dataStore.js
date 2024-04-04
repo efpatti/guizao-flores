@@ -16,9 +16,13 @@ const products = [
     name: "Buquê Império com Astromélias Roxas",
     old_price: "179,90",
     price: "109,90",
+    desc: "É como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza",
     category_item: [
       {
         name: "Astromélias",
+      },
+      {
+        name: "Home",
       },
     ],
     img: require("../../img/buque-imperio-com-astromelias-roxas-removebg-preview.png"),
@@ -104,6 +108,9 @@ const products = [
       {
         name: "Flores Secas",
       },
+      {
+        name: "Pelúcias",
+      },
     ],
     img: require("../../img/flores-secas-angel-removebg-preview.png"),
   },
@@ -139,6 +146,9 @@ const products = [
     category_item: [
       {
         name: "Flores Secas",
+      },
+      {
+        name: "Pelúcias",
       },
     ],
     img: require("../../img/flores-secas-stitch-removebg-preview.png"),
@@ -310,6 +320,12 @@ const products = [
     category_item: [
       {
         name: "Flores Secas",
+      },
+      {
+        name: "Cestas de Flores",
+      },
+      {
+        name: "Cestas de Aniversário",
       },
     ],
     img: require("../../img/bag-secas-pink-removebg-preview.png"),
@@ -484,6 +500,7 @@ const products = [
     name: "Mega Buquês de Girassóis",
     old_price: "289,90",
     price: "259,90",
+    desc: "Os girassóis são como pequenos artistas do sol, Suas flores gigantes e brilhantes parecem sorrir para o mundo",
     category_item: [
       {
         name: "Girassóis",
@@ -496,6 +513,9 @@ const products = [
       },
       {
         name: "Amizade",
+      },
+      {
+        name: "Home",
       },
     ],
     img: require("../../img/mega-buques-de-girassois-removebg-preview.png"),
@@ -559,9 +579,13 @@ const products = [
     name: "Buquê Presente Gérberas Vermelhas",
     old_price: "125,90",
     price: "87,90",
+    desc: "É como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
     category_item: [
       {
         name: "Gérberas",
+      },
+      {
+        name: "Home",
       },
     ],
     img: require("../../img/buque-presente-gerberas-vermelhas-removebg-preview.png"),
@@ -595,9 +619,13 @@ const products = [
     name: "Buquê de Gérberas Coloridas",
     old_price: "229,90",
     price: "169,90",
+    desc: "Essa diversidade de cores torna o buquê de gérberas uma opção alegre e cheia de vida para presentear alguém especial.",
     category_item: [
       {
         name: "Gérberas",
+      },
+      {
+        name: "Romântico",
       },
     ],
     img: require("../../img/buque-de-gerberas-coloridas-removebg-preview.png"),
@@ -619,9 +647,13 @@ const products = [
     name: "Buquê de Gypsophila Encantada Azul Claro",
     old_price: "195,90",
     price: "165,90",
+    desc: "É como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial.",
     category_item: [
       {
         name: "Rosa Encantada",
+      },
+      {
+        name: "Home",
       },
     ],
     img: require("../../img/buque-de-gypsophila-encantada-azul-claro-removebg-preview.png"),
@@ -662,6 +694,165 @@ const products = [
     ],
     img: require("../../img/buque-de-gypsophila-encantada-roxo-removebg-preview.png"),
   },
+  {
+    id: 50,
+    name: "Vaso Cerâmica Azul e Preto",
+    old_price: "125,90",
+    price: "89,90",
+    desc: "Com um design clássico e elegante, o vaso possui um tom de azul profundo e escuro.",
+    category_item: [
+      {
+        name: "Acessórios",
+      },
+    ],
+    img: require("../../img/danete.png"),
+  },
+  {
+    id: 51,
+    name: "Regador de girasol",
+    old_price: "78,90",
+    price: "59,90",
+    desc: "Regador encantador com girasois feito em metal perfeito para e decorar o ambiente",
+    category_item: [
+      {
+        name: "Acessórios",
+      },
+    ],
+    img: require("../../img/image-removebg-preview (2).png"),
+  },
+  {
+    id: 52,
+    name: "Vaso de flor transparente",
+    old_price: "65,00",
+    price: "42,90",
+    desc: "Imagine um vaso de flor, feito de vidro delicado que brilha suavemente à luz do sol.",
+    category_item: [
+      {
+        name: "Acessórios",
+      },
+    ],
+    img: require("../../img/barronelius.png"),
+  },
+  {
+    id: 53,
+    name: "Buquê de Rosas Vermelhas",
+    old_price: "250,00",
+    price: "200,00",
+    desc: "É uma exuberante e apaixonada expressão de amor e afeto. Cada rosa vermelha simboliza beleza, romance e desejo",
+    img: require("../../img/product-2.png"),
+    category_item: [
+      {
+        name: "Romântico",
+      },
+    ],
+  },
+  {
+    id: 54,
+    name: "Buquê de 12 Rosas Lilás",
+    old_price: "120,99",
+    price: "89,90",
+    desc: "As rosas lilás simbolizam encanto, admiração e amor à primeira vista, tornando este arranjo floral uma maneira elegante de expressar sentimentos",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/product-5.png"),
+  },
+  {
+    id: 55,
+    name: "Buquê de Tulipas",
+    old_price: "129,90",
+    price: "99,90",
+    desc: "Um buquê de tulipas é uma escolha elegante e sofisticada para presentear alguém especial. As tulipas são flores conhecidas por sua beleza simples e graciosa.",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/product-6.png"),
+  },
+  {
+    id: 56,
+    name: "Buquê de 12 Rosas Brancas",
+    old_price: "129,90",
+    price: "99,90",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-12-rosas-brancas.png"),
+  },
+  {
+    id: 57,
+    name: "Buquê de 12 Rosas Champanhe",
+    old_price: "129,90",
+    price: "99,90",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+      {
+        name: "Condolências",
+      },
+    ],
+    img: require("../../img/buque-12-rosas-champanhe.png"),
+  },
+  {
+    id: 58,
+    name: "Buquê de 36 Rosas Brancas",
+    old_price: "359,90",
+    price: "329,90",
+    category_item: [
+      {
+        name: "Condolências",
+      },
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-36-rosas-brancas.png"),
+  },
+  {
+    id: 59,
+    name: "Buquê de 24 Rosas Champanhe",
+    old_price: "249,90",
+    price: "229,90",
+    category_item: [
+      {
+        name: "Condolências",
+      },
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-24-rosas-champanhe.png"),
+  },
+  {
+    id: 60,
+    name: "Kit de Aniversário Felicidades para Você",
+    old_price: "329,90",
+    price: "249,90",
+    category_item: [
+      {
+        name: "Cestas de Aniversário",
+      },
+    ],
+    img: require("../../img/kit-felicidades.png"),
+  },
+  {
+    id: 61,
+    name: "Buquê de 8 Rosas Vermelhas e Pelúcia",
+    old_price: "321,90",
+    price: "273,0",
+    category_item: [
+      {
+        name: "Pelúcias",
+      },
+    ],
+    img: require("../../img/buque-rosas-urso.png"),
+  },
 ];
 
 const filters = [
@@ -669,23 +860,18 @@ const filters = [
     name: "Tipo de flor",
     category: [
       {
-        id: 1,
         name: "Astromélias",
       },
       {
-        id: 2,
         name: "Flores Secas",
       },
       {
-        id: 3,
         name: "Gérberas",
       },
       {
-        id: 4,
         name: "Girassóis",
       },
       {
-        id: 5,
         name: "Rosa Encantada",
       },
     ],
@@ -694,24 +880,10 @@ const filters = [
     name: "Presentes",
     category: [
       {
-        id: 6,
-        name: "Bolos",
-      },
-      {
-        id: 7,
         name: "Chocolates",
       },
       {
-        id: 8,
-        name: "Guloseimas",
-      },
-      {
-        id: 9,
         name: "Pelúcias",
-      },
-      {
-        id: 10,
-        name: "Presente Criativo",
       },
     ],
   },
@@ -758,6 +930,14 @@ const filters = [
       },
       {
         name: "Romântico",
+      },
+    ],
+  },
+  {
+    name: "Para cuidar",
+    category: [
+      {
+        name: "Acessórios",
       },
     ],
   },

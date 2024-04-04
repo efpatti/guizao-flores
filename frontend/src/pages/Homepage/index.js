@@ -12,6 +12,7 @@ import {
   Button,
   Flex,
   Box,
+  Grid,
 } from "@chakra-ui/react";
 import fototeste from "../../img/mega-buque-com-girassois-e-rosas-brancas-removebg-preview.png";
 import bannerOrquidea from "../../img/banner-orquidea.webp";
@@ -34,10 +35,8 @@ import apaixonado from "../../img/Apaixonados.png";
 import florfofa from "../../img/flor-fofa-removebg-preview.png";
 import florfofa2 from "../../img/flor-fofa2-removebg-preview.png";
 import florfofa3 from "../../img/flor-fofa3-removebg-preview.png";
-import apaixonado1 from "../../img/product-2.png";
-import apaixonado2 from "../../img/product-5.png";
-import apaixonado3 from "../../img/buque-de-gerberas-coloridas-removebg-preview.png";
-import apaixonado4 from "../../img/product-6.png";
+import { products } from "../Catalogo/dataStore";
+import ProductCard from "../../components/ProductCard";
 const buttonStyle = {
   baseStyle: {
     fontWeight: "bold",
@@ -77,296 +76,132 @@ const buttonStyle = {
 };
 
 function Home() {
-  const cardData = [
-    {
-      nome: "Mega Buquê de Girassóis",
-      Imagem: fototeste,
-      Preco: "639,00",
-      Odpreco: "720,00",
-      Descricao:
-        " Os girassóis são como pequenos artistas do sol, Suas flores gigantes e brilhantes parecem sorrir para o mundo",
-    },
-    {
-      nome: "Buquê Presente Gérberas Vermelhas",
-      Imagem: promo2,
-      Preco: "87,90",
-      Odpreco: "125,00",
-      Descricao:
-        " É como um jardim de paixão em suas mãos. Cada flor transmite um amor intenso e caloroso.",
-    },
-    {
-      nome: "Buquê Poesia de Flores Secas Roxas",
-      Imagem: promo3,
-      Preco: "89,90",
-      Odpreco: "129,00",
-      Descricao:
-        "É como um pedaço do céu noturno. Cada flor seca preserva a beleza efêmera da natureza.",
-    },
-    {
-      nome: "Buquê de Gypsophila Encantada Azul Claro",
-      Imagem: promo33,
-      Preco: "165,00",
-      Odpreco: "195,90",
-      Descricao:
-        "É como um sonho delicado tornado realidade. Cada pequena flor parece uma estrela celestial. ",
-    },
-  ];
-  const cardApaixonado = [
-    {
-      nome2: "Buquê de rosas vermelhas",
-      Imagem2: apaixonado1,
-      Preco2: "250,00",
-      Descricao2: "É uma exuberante e apaixonada expressão de amor e afeto. Cada rosa vermelha simboliza beleza, romance e desejo",
-    },
-    {
-      nome2: "Buquê de 12 rosas lilás",
-      Imagem2: apaixonado2,
-      Preco2: "120,99",
-      Descricao2: "As rosas lilás simbolizam encanto, admiração e amor à primeira vista, tornando este arranjo floral uma maneira elegante de expressar sentimentos.",
-    },
-    {
-      nome2: "Buquê de Gérberas Coloridas",
-      Imagem2: apaixonado3,
-      Preco2: "169,90",
-      Descricao2: " Essa diversidade de cores torna o buquê de gérberas uma opção alegre e cheia de vida para presentear alguém especial.",
-    },
-    {
-      nome2: "Buquê de tulipas",
-      Imagem2: apaixonado4,
-      Preco2: "99,90",
-      Descricao2: "Um buquê de tulipas é uma escolha elegante e sofisticada para presentear alguém especial. As tulipas são flores conhecidas por sua beleza simples e graciosa.",
-    },
-  ];
-  const cardAcessorio = [
-    {
-      nome1: "Vaso Cerâmica Azul e Preto",
-      Imagem1: acessorio,
-      Preco1: "89,90",
-      Descricao1:
-        " Com um design clássico e elegante, o vaso possui um tom de azul profundo e escuro.",
-    },
-    {
-      nome1: "Vaso de flor transparente",
-      Imagem1: acessorio2,
-      Preco1: "47,90",
-      Descricao1:
-        "Imagine um vaso de flor, feito de vidro delicado que brilha suavemente à luz do sol.",
-    },
-    {
-      nome1: "Regador de girasol ",
-      Imagem1: acessorio3,
-      Preco1: "59,90",
-      Descricao1:
-        "Regador encantador com girasois feito em metal perfeito para e decorar o ambiente ",
-    },
-  ];
+  // Definindo uma classe CSS comum para todos os cards de produtos
+  const cardStyle = {
+    width: "100%",
+    height: "100%",
+  };
+
+  const produtosApaixonado = products.filter((product) =>
+    product.category_item.some((category) => category.name === "Romântico")
+  );
+  const produtosAcessorios = products.filter((product) =>
+    product.category_item.some((category) => category.name === "Acessórios")
+  );
+  const produtosData = products.filter((product) =>
+    product.category_item.some((category) => category.name === "Home")
+  );
   const { colorMode } = useColorMode();
   return (
     <section>
       <Carousel className="carrosel">
         <Carousel.Item>
-          <img className="bannerfoto" src={bannerabraco} />
+          <Image className="bannerfoto" src={bannerabraco} />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="bannerfoto" src={bannerOrquidea} />
+          <Image className="bannerfoto" src={bannerOrquidea} />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="bannerfoto" src={bannerOutono} />
+          <Image className="bannerfoto" src={bannerOutono} />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="bannerfoto" src={bannerPascoa} />
+          <Image className="bannerfoto" src={bannerPascoa} />
         </Carousel.Item>
       </Carousel>
 
       <h1 className="letreiro">Promoções de Março</h1>
-      <Container>
+      <Container className="mb-5 mt-5">
         <Row>
-          {cardData.map((card, index) => (
+          {produtosData.map((product, index) => (
             <Col key={index}>
               <Card maxW="sm">
                 <CardBody>
-                  <Image src={card.Imagem} />
+                  <Image src={product.img} />
                   <Stack mt="2    " spacing="0">
-                    <Heading size="md">{card.nome}</Heading>
-                    <Text>{card.Descricao}</Text>
+                    <Heading size="md">{product.name}</Heading>
+                    <Text>{product.desc}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      R${card.Preco}
+                      R${product.price}
                     </Text>
                     <Text as="s" fontSize="2x1">
-                      R${card.Odpreco}
+                      R${product.old_price}
                     </Text>
                   </Stack>
                 </CardBody>
                 <Divider />
                 <CardFooter>
-                  <ButtonGroup spacing="2">
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Comprar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Comprar
-                      </Button>
-                    )}
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Adicionar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Adicionar
-                      </Button>
-                    )}
-                  </ButtonGroup>
+                  <ProductCard
+                    product={product}
+                    buttonText="Adicionar ao Carrinho"
+                  />
                 </CardFooter>
               </Card>
             </Col>
           ))}
         </Row>
-
         <h1 className="letreiro1">Acessorios para sua planta</h1>
         <Row>
-          {cardAcessorio.map((card, index) => (
+          {produtosAcessorios.map((product, index) => (
             <Col key={index}>
               <Card className="card2" maxW="sm">
                 <CardBody>
-                  <Image src={card.Imagem1} />
+                  <Image src={product.img} />
                   <Stack mt="1  " spacing="3">
-                    <Heading size="md">{card.nome1}</Heading>
-                    <Text>{card.Descricao1}</Text>
+                    <Heading size="md">{product.name}</Heading>
+                    <Text>{product.desc}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      R${card.Preco1}
+                      R${product.price}
+                    </Text>
+                    <Text as="s" fontSize="2x1">
+                      R${product.old_price}
                     </Text>
                   </Stack>
                 </CardBody>
                 <Divider />
                 <CardFooter>
-                  <ButtonGroup spacing="2">
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Comprar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Comprar
-                      </Button>
-                    )}
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Adicionar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Adicionar
-                      </Button>
-                    )}
-                  </ButtonGroup>
+                  <ProductCard
+                    product={product}
+                    buttonText="Adicionar ao Carrinho"
+                  />
                 </CardFooter>
               </Card>
             </Col>
           ))}
         </Row>
       </Container>
-      <br />
-      <br />
-      <div>
-        <Image fluid className="banner-amor" src={apaixonado} />
-      </div>
-      <Container>
-        <br />
-        <br />
+      <Image fluid className="banner-amor mb-5" src={apaixonado} />
+      <Container mt="1rem" mb="1rem">
         <Row>
-          {cardApaixonado.map((card, index) => (
-            <Col key={index}>
-              <Card className="card3" maxW="sm">
+          {/* Mapeamento dos produtos */}
+          {produtosApaixonado.map((product, index) => (
+            <Col key={index} style={{ marginBottom: "20px" }}>
+              <Card maxW="sm" style={cardStyle}>
                 <CardBody>
-                  <Image src={card.Imagem2} />
-                  <Stack mt="1  " spacing="3">
-                    <Heading size="md">{card.nome2}</Heading>
-                    <Text>{card.Descricao2}</Text>
+                  <Image src={product.img} />
+                  <Stack mt="2" spacing="0">
+                    <Heading size="md">{product.name}</Heading>
+                    <Text>{product.desc}</Text>
                     <Text className="texto-preco" fontSize="2xl">
-                      R${card.Preco2}
+                      R${product.price}
+                    </Text>
+                    <Text as="s" fontSize="2x1">
+                      R${product.old_price}
                     </Text>
                   </Stack>
                 </CardBody>
                 <Divider />
                 <CardFooter>
-                  <ButtonGroup spacing="2">
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Comprar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Comprar
-                      </Button>
-                    )}
-                    {colorMode === "light" ? (
-                      <Button
-                        bg="black"
-                        color="white"
-                        _hover={{ bg: "white", color: "black" }}
-                      >
-                        Adicionar
-                      </Button>
-                    ) : (
-                      <Button
-                        bg="white"
-                        color="black"
-                        _hover={{ bg: "black", color: "white" }}
-                      >
-                        Adicionar
-                      </Button>
-                    )}
-                  </ButtonGroup>
+                  <ProductCard
+                    product={product}
+                    buttonText="Adicionar ao Carrinho"
+                  />
                 </CardFooter>
               </Card>
             </Col>
           ))}
         </Row>
       </Container>
-      <Flex justify="center" align="center" mt="3rem">
+      <Flex justify="center" align="center" mt="3rem" mb="3rem">
         <Box boxShadow="2xl" rounded="md">
           <Text textAlign="center" fontSize="35">
             Dicas de cuidado
@@ -427,7 +262,9 @@ function Home() {
                   <Box className="boxi2" boxSize="xs">
                     <Text fontSize="27">Lembre-se de trocar a água</Text>
                     <Text fontSize="md">
-                    Para conservar flores é trocar a água do vaso regularmente. A água deve ser trocada a cada dois dias ou sempre que estiver turva.
+                      Para conservar flores é trocar a água do vaso
+                      regularmente. A água deve ser trocada a cada dois dias ou
+                      sempre que estiver turva.
                     </Text>
                   </Box>
                 </div>
@@ -438,7 +275,6 @@ function Home() {
             </Box>
           </Stack>
         </Box>
-        
       </Flex>
     </section>
   );
