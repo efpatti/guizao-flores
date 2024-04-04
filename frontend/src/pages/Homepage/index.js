@@ -6,31 +6,20 @@ import {
   Heading,
   Divider,
   Card,
-  ButtonGroup,
   Image,
   Text,
-  Button,
   Flex,
   Box,
   Grid,
 } from "@chakra-ui/react";
-import fototeste from "../../img/mega-buque-com-girassois-e-rosas-brancas-removebg-preview.png";
+import { Carousel } from "react-bootstrap";
 import bannerOrquidea from "../../img/banner-orquidea.webp";
 import bannerOutono from "../../img/banner-outono.webp";
 import bannerPascoa from "../../img/banner-pascoa.webp";
 import bannerabraco from "../../img/banner-abraco.webp";
-import promo2 from "../../img/buque-presente-gerberas-vermelhas-removebg-preview.png";
-import promo33 from "../../img/buque-de-gypsophila-encantada-azul-claro-removebg-preview.png";
-import promo3 from "../../img/flores-secas-roxas-removebg-preview.png";
-import acessorio from "../../img/danete.png";
-import acessorio2 from "../../img/image-removebg-preview (2).png";
-import acessorio3 from "../../img/barronelius.png";
-import { React, useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
+import React from "react";
 import "../Homepage/Homepage.css";
 import { Container, Row, Col } from "react-bootstrap";
-import fototeste2 from "../../img/snum.jpg";
-import fototeste1 from "../../img/sndois.jpg";
 import apaixonado from "../../img/Apaixonados.png";
 import florfofa from "../../img/flor-fofa-removebg-preview.png";
 import florfofa2 from "../../img/flor-fofa2-removebg-preview.png";
@@ -76,7 +65,6 @@ const buttonStyle = {
 };
 
 function Home() {
-  // Definindo uma classe CSS comum para todos os cards de produtos
   const cardStyle = {
     width: "100%",
     height: "100%",
@@ -85,6 +73,7 @@ function Home() {
   const produtosApaixonado = products.filter((product) =>
     product.category_item.some((category) => category.name === "Romântico")
   );
+  const apaixonados = produtosApaixonado.slice(0, 4);
   const produtosAcessorios = products.filter((product) =>
     product.category_item.some((category) => category.name === "Acessórios")
   );
@@ -94,20 +83,22 @@ function Home() {
   const { colorMode } = useColorMode();
   return (
     <section>
-      <Carousel className="carrosel">
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerabraco} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerOrquidea} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerOutono} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image className="bannerfoto" src={bannerPascoa} />
-        </Carousel.Item>
-      </Carousel>
+      <Flex justify="center" mt="7rem">
+        <Carousel className="carousel-container">
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerabraco} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerOrquidea} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerOutono} fluid />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image className="bannerfoto" src={bannerPascoa} fluid />
+          </Carousel.Item>
+        </Carousel>
+      </Flex>
 
       <h1 className="letreiro">Promoções de Março</h1>
       <Container className="mb-5 mt-5">
@@ -173,7 +164,7 @@ function Home() {
       <Container mt="1rem" mb="1rem">
         <Row>
           {/* Mapeamento dos produtos */}
-          {produtosApaixonado.map((product, index) => (
+          {apaixonados.map((product, index) => (
             <Col key={index} style={{ marginBottom: "20px" }}>
               <Card maxW="sm" style={cardStyle}>
                 <CardBody>

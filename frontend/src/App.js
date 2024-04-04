@@ -10,8 +10,7 @@ import Payment from "./pages/Payment";
 import SignIn from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ProductDetails from "./pages/Catalogo/productDetails";
-import Rodape from "./components/Rodape";
-import Login from "./pages/Login";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -32,7 +31,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
-          <Rodape />
+          <Footer />
         </ChakraProvider>
       </Router>
     </CartProvider>
