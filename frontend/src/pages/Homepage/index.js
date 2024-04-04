@@ -267,7 +267,9 @@ function Home() {
           </Stack>
         </Box>
       </Flex>
+      <br/><br/><br/>
     </section>
+    
   );
 }
 
