@@ -38,7 +38,6 @@ const NavBar = ({ categories, onSelectCategory }) => {
     { name: "Sobre nós", href: "/aboutus" },
     { name: "Produtos", href: "/products" },
     { name: "Contato", href: "/contact" },
-    { name: "Pagamento", href: "/payment" },
   ];
 
   const accountData = [
