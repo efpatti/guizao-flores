@@ -27,16 +27,10 @@ function App() {
               path="products/details/:productId"
               element={<ProductDetails />}
             />
-<<<<<<< HEAD
-            <Route path="payment" element={<Payment />} />
-            <Route path="contact" element={<Contato />} />
-            <Route path="signin" element={<Login />} />
-=======
             <Route path="/payment" element={<Payment />} />
             <Route path="/contact" element={<Contato />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
->>>>>>> 8b431245147ceaaa095e848b2970c669d4d08b3a
           </Routes>
           <Rodape />
         </ChakraProvider>
