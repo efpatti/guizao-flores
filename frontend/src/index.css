@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 body {
   margin: 0;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,4 +13,33 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+=======
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.blink-me {
+  animation: blinker 10s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.show-me {
+  animation: show 10s linear infinite;
+}
+
+@keyframes show {
+  50% {
+    opacity: 100;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.font-header {
+  font-family: "Inter", "Mulish", sans-serif;
+>>>>>>> 79ec174d004d19ab28d3911460be45cdf276ab24
 }

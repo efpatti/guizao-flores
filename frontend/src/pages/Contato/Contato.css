@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-size: 50px;
+  font-weight: lighter;
+}
+.contact-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.contact-left-title h2 {
+  font-weight: 600;
+
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.contact-left-title-hr {
+  border: none;
+  width: 120px;
+  height: 5px;
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.contact-left-title-hr-dark {
+  background-color: white;
+  border: none;
+  width: 120px;
+  height: 5px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.contact-inputs {
+  width: 400px !important;
+  height: 50px !important;
+  border: none !important;
+  outline: none !important;
+  padding-left: 25px !important;
+  font-weight: 500;
+  color: #666 !important;
+  border-radius: 50px !important;
+  background: #e1dada !important;
+}
+.contact-left textarea {
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+.contact-inputs::placeholder {
+  color: #a9a9a9 !important;
+}
+.contact-left button {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #000000;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #ff994f, #fa6d86);
+  cursor: pointer;
+}
+
+.contact-left button img {
+  height: 15px;
+}
+.contact-right {
+  position: relative; /* Importante para posicionar corretamente o overlay */
+  display: inline-block; /* Isso garante que o container só ocupe o espaço da imagem */
+}
+
+.contact-right img {
+  width: 100%; /* Garante que a imagem ocupe todo o espaço disponível no container */
+  border-radius: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    239,
+    135,
+    17,
+    0.537
+  ); /* Cor do fundo com transparência */
+  color: white; /* Cor do texto */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s; /* Transição suave */
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px; /* Adicione borda arredondada para corresponder à imagem */
+  cursor: pointer;
+}
+
+.contact-right:hover .overlay {
+  opacity: 10; /* Torna o overlay visível no hover */
+}
+.textooverlay {
+  font-size: medium;
+  text-align: left;
+}
+.tele {
+  border-radius: 0px !important;
+}

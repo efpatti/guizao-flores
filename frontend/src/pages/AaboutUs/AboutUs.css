@@ -1,0 +1,75 @@
+.titulo {
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+.boxtextone {
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  padding: 20px;
+  font-weight: lighter;
+}
+.boxtextonedark {
+  border-top: solid 1px rgb(255, 255, 255);
+  border-left: solid 1px rgb(255, 255, 255);
+  padding: 20px;
+  font-weight: lighter;
+}
+.titulobox {
+  background-color: linear-gradient(#56626b, #4c6c81, #083263);
+}
+.gradient {
+  font-weight: 400;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(215, 4, 35),
+    rgb(223, 210, 63),
+    rgb(203, 126, 150)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+.gradientdois {
+  font-weight: 400;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(96, 88, 192),
+    rgb(162, 164, 214),
+    rgb(193, 189, 128)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+.textoum {
+  text-align: justify;
+}
+Image {
+  border-radius: 50px;
+}
+.cutetext {
+  border-top: solid 1px rgb(186, 185, 182);
+  border-bottom: solid 1px rgb(186, 185, 182);
+  padding: 30px;
+}
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.margin {
+  margin-left: 15px;
+}
+.imgdois {
+  margin-left: 50px;
+}
