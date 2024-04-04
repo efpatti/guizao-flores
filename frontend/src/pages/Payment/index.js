@@ -11,17 +11,22 @@ import {
   useColorMode,
   Box,
 } from "@chakra-ui/react";
-// import { Form } from "react-bootstrap"; // Importe Form do react-bootstrap
-import "../Payment/pagamento.css";
+import { MdOutlineContentCopy } from "react-icons/md";
+import { Container, Row, Col } from "react-bootstrap";
+import Timer from "../../Timer";
+import QR from "../../img/qrcode-pix.png";
 import pix from "../../img/pix.png";
 import guizao from "../../img/debit.png";
-import QR from "../../img/qrcode-pix.png";
-import { MdOutlineContentCopy } from "react-icons/md";
-import Timer from "../../Timer";
-import { Container, Row, Col } from "react-bootstrap";
 
 function Payment() {
   const [exibirForms, setExibirForms] = useState(true);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const totalPriceParam = urlParams.get("totalPrice");
+    setTotalPrice(parseFloat(totalPriceParam));
+  }, []);
 
   const handleClick = () => {
     setExibirForms(!exibirForms);
@@ -33,6 +38,9 @@ function Payment() {
       color={colorMode === "light" ? "black" : "white"}
       bg={colorMode === "light" ? "white" : "transparent"}
     >
+      <Box>
+        <h2>{`Preço Total: ${totalPrice}`}</h2>
+      </Box>
       <div className={exibirForms ? "elojob" : "caixa-berde"}>
         {exibirForms ? (
           <>
@@ -51,7 +59,7 @@ function Payment() {
 
                 <div className="irmaozinho">
                   <FormControl isRequired>
-                    <FormLabel>N° do cartâo</FormLabel>
+                    <FormLabel>N° do cartão</FormLabel>
                     <Input placeholder="XXXX-XXXX-XXXX-XXXX" maxLength={20} />
                   </FormControl>
                   <FormControl isRequired>
@@ -69,7 +77,6 @@ function Payment() {
                       <Row>
                         <Col className="ultima">
                           <Input className="CVV" placeholder="XXX" />
-
                           <Input className="CVV" placeholder="XX/XX" />
                         </Col>
                         <Col></Col>
@@ -84,10 +91,9 @@ function Payment() {
           <div className="text">
             <Timer />
             <Flex justify="center">
-              <img className="qrcode" src={QR} width={200} />
+              <img className="qrcode" src={QR} width={200} alt="QR Code" />
             </Flex>
             <b className="textQR">Copie o código</b>
-
             <div className="boxCode ">
               <div>
                 <div className="codepix">
@@ -106,7 +112,7 @@ function Payment() {
         className={colorMode === "light" ? "butao" : "butao-black"}
         onClick={handleClick}
       >
-        <img src={exibirForms ? pix : guizao} />
+        <img src={exibirForms ? pix : guizao} alt="Imagem" />
       </button>
     </Flex>
   );

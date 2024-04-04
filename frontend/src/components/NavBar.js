@@ -189,6 +189,16 @@ const NavBar = ({ categories, onSelectCategory }) => {
                     <Text as="b">Total:</Text>{" "}
                     {formatPrice(cart.getTotalCost())}
                   </Text>
+                  <Button
+                    variant="ghost"
+                    color={colorMode === "light" ? "#405B18" : "greenyellow"}
+                    onClick={() => {
+                      const totalPrice = cart.getTotalCost();
+                      window.location.href = `/payment?totalPrice=${totalPrice}`;
+                    }}
+                  >
+                    Comprar
+                  </Button>
                 </>
               ) : (
                 <Text>Você não tem itens no carrinho</Text>
