@@ -6,17 +6,19 @@ import {
   RadioGroup,
   HStack,
   Radio,
-  FormHelperText,
   Input,
   useColorMode,
-  Box,
+  Text,
+  Stack,
 } from "@chakra-ui/react";
+import "./pagamento.css";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { Container, Row, Col } from "react-bootstrap";
 import Timer from "../../Timer";
 import QR from "../../img/qrcode-pix.png";
-import pix from "../../img/pix.png";
-import guizao from "../../img/debit.png";
+import pix from "../../img/pix.png"; // Importe a imagem pix aqui
+import guizao from "../../img/debit.png"; // Importe a imagem guizao aqui
+import { formatPrice } from "../Catalogo/productDetails";
 
 function Payment() {
   const [exibirForms, setExibirForms] = useState(true);
@@ -38,13 +40,13 @@ function Payment() {
       color={colorMode === "light" ? "black" : "white"}
       bg={colorMode === "light" ? "white" : "transparent"}
     >
-      <Box>
-        <h2>{`Preço Total: ${totalPrice}`}</h2>
-      </Box>
       <div className={exibirForms ? "elojob" : "caixa-berde"}>
         {exibirForms ? (
           <>
             <div>
+              <Text fontSize="lg" ml="2" as="b">
+                {formatPrice(totalPrice)}
+              </Text>
               <h3 className="textPayment">Seus dados, para finalizar..</h3>
               <div className="formInfo elojob">
                 <FormControl as="fieldset">
@@ -59,7 +61,7 @@ function Payment() {
 
                 <div className="irmaozinho">
                   <FormControl isRequired>
-                    <FormLabel>N° do cartão</FormLabel>
+                    <FormLabel>N° do cartâo</FormLabel>
                     <Input placeholder="XXXX-XXXX-XXXX-XXXX" maxLength={20} />
                   </FormControl>
                   <FormControl isRequired>
@@ -67,7 +69,7 @@ function Payment() {
                     <Input placeholder="Ex: Enzo" />
                   </FormControl>
                   <FormControl isRequired>
-                    <Container>
+                    <Stack>
                       <Row>
                         <Col className="ultima">
                           <FormLabel>CVV</FormLabel>
@@ -76,12 +78,11 @@ function Payment() {
                       </Row>
                       <Row>
                         <Col className="ultima">
-                          <Input className="CVV" placeholder="XXX" />
-                          <Input className="CVV" placeholder="XX/XX" />
+                          <Input className="CVV" placeholder="XXX" mr="2" />
+                          <Input className="CVV" placeholder="XX/XX" mr="2" />
                         </Col>
-                        <Col></Col>
                       </Row>
-                    </Container>
+                    </Stack>
                   </FormControl>
                 </div>
               </div>
@@ -89,11 +90,15 @@ function Payment() {
           </>
         ) : (
           <div className="text">
+            <Text fontSize="lg" ml="2" as="b">
+              {formatPrice(totalPrice)}
+            </Text>
             <Timer />
             <Flex justify="center">
-              <img className="qrcode" src={QR} width={200} alt="QR Code" />
+              <img className="qrcode" src={QR} width={200} />
             </Flex>
             <b className="textQR">Copie o código</b>
+
             <div className="boxCode ">
               <div>
                 <div className="codepix">
@@ -112,7 +117,7 @@ function Payment() {
         className={colorMode === "light" ? "butao" : "butao-black"}
         onClick={handleClick}
       >
-        <img src={exibirForms ? pix : guizao} alt="Imagem" />
+        <img src={exibirForms ? pix : guizao} />
       </button>
     </Flex>
   );

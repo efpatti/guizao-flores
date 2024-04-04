@@ -11,17 +11,16 @@ import {
 } from "@chakra-ui/react";
 import { RiStarSFill } from "react-icons/ri";
 import ProductCard from "../../components/ProductCard";
-
+export const formatPrice = (price) => {
+  return price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+};
 function ProductDetails() {
   const { colorMode } = useColorMode();
   const { productId } = useParams();
   const product = getProductData(parseInt(productId));
-  const formatPrice = (price) => {
-    return price.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
-  };
   let randomNumber = Math.floor(Math.random() * 20) + 1;
   const stars = [];
 

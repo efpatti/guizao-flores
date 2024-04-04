@@ -2,7 +2,7 @@ import React from "react";
 import "./Rodape.css";
 import { Text, Link, Box, useColorMode, Stack, Center } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
-function Rodape() {
+function Footer() {
   const { colorMode } = useColorMode();
   const navLinks = [
     {
@@ -75,4 +75,4 @@ function Rodape() {
   );
 }
 
-export default Rodape;
+export default Footer;
