@@ -7,6 +7,8 @@ import Catalogo from "./pages/Catalogo";
 import Contato from "./pages/Contato";
 import NavBar from "./components/NavBar";
 import Payment from "./pages/Payment";
+import SignIn from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import ProductDetails from "./pages/Catalogo/productDetails";
 import Rodape from "./components/Rodape";
 
@@ -18,14 +20,16 @@ function App() {
           <NavBar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="aboutus" element={<AboutUs />} />
-            <Route path="products" element={<Catalogo />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/products" element={<Catalogo />} />
             <Route
               path="products/details/:productId"
               element={<ProductDetails />}
             />
-            <Route path="payment" element={<Payment />} />
-            <Route path="contact" element={<Contato />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/contact" element={<Contato />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
           <Rodape />
         </ChakraProvider>

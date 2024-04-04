@@ -136,11 +136,9 @@ const NavBar = ({ categories, onSelectCategory }) => {
 
           <Stack direction="row" spacing="6" justify="center" flex="1">
             {navData.map((item, i) => (
-              <Text fontSize="md" key={i}>
-                <Link href={item.href} fontSize="sm">
-                  {item.name}
-                </Link>
-              </Text>
+              <Link href={item.href} fontSize="md" key={i}>
+                {item.name}
+              </Link>
             ))}
           </Stack>
           <Stack direction="row" gap="3" mr="4">
@@ -156,7 +154,11 @@ const NavBar = ({ categories, onSelectCategory }) => {
                 </MenuButton>
                 <MenuList>
                   {accountData.map((item, i) => (
-                    <MenuItem key={i}>{item.name}</MenuItem>
+                    <MenuItem key={i}>
+                      <Link href={item.href} w="100%">
+                        {item.name}
+                      </Link>
+                    </MenuItem>
                   ))}
                 </MenuList>
               </Menu>

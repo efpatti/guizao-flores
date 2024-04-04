@@ -3,6 +3,7 @@ import "./Rodape.css";
 import { Text, Link, Box, useColorMode, Stack, Center } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 function Rodape() {
+  const { colorMode } = useColorMode();
   const navLinks = [
     {
       name: "Página Inicial",
@@ -36,7 +37,6 @@ function Rodape() {
       size: "24px", // increase size
     },
   ];
-  const { colorMode } = useColorMode();
   return (
     <Box bg={colorMode === "light" ? "#F6F4F0" : "transparent"}>
       <footer className="footer position-relative mt-3">
@@ -58,7 +58,11 @@ function Rodape() {
               style={{ justifyContent: "center", alignItems: "center" }}
             >
               {socialLinks.map((rede, i) => (
-                <Link key={i} fontSize={rede.size}>
+                <Link
+                  key={i}
+                  fontSize={rede.size}
+                  color={colorMode === "light" ? "#405B18" : "greenyellow"}
+                >
                   {React.createElement(rede.icon)}
                 </Link>
               ))}
