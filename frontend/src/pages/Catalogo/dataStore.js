@@ -108,6 +108,9 @@ const products = [
       {
         name: "Flores Secas",
       },
+      {
+        name: "Pelúcias",
+      },
     ],
     img: require("../../img/flores-secas-angel-removebg-preview.png"),
   },
@@ -143,6 +146,9 @@ const products = [
     category_item: [
       {
         name: "Flores Secas",
+      },
+      {
+        name: "Pelúcias",
       },
     ],
     img: require("../../img/flores-secas-stitch-removebg-preview.png"),
@@ -314,6 +320,12 @@ const products = [
     category_item: [
       {
         name: "Flores Secas",
+      },
+      {
+        name: "Cestas de Flores",
+      },
+      {
+        name: "Cestas de Aniversário",
       },
     ],
     img: require("../../img/bag-secas-pink-removebg-preview.png"),
@@ -760,6 +772,87 @@ const products = [
     ],
     img: require("../../img/product-6.png"),
   },
+  {
+    id: 56,
+    name: "Buquê de 12 Rosas Brancas",
+    old_price: "129,90",
+    price: "99,90",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-12-rosas-brancas.png"),
+  },
+  {
+    id: 57,
+    name: "Buquê de 12 Rosas Champanhe",
+    old_price: "129,90",
+    price: "99,90",
+    category_item: [
+      {
+        name: "Romântico",
+      },
+      {
+        name: "Condolências",
+      },
+    ],
+    img: require("../../img/buque-12-rosas-champanhe.png"),
+  },
+  {
+    id: 58,
+    name: "Buquê de 36 Rosas Brancas",
+    old_price: "359,90",
+    price: "329,90",
+    category_item: [
+      {
+        name: "Condolências",
+      },
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-36-rosas-brancas.png"),
+  },
+  {
+    id: 59,
+    name: "Buquê de 24 Rosas Champanhe",
+    old_price: "249,90",
+    price: "229,90",
+    category_item: [
+      {
+        name: "Condolências",
+      },
+      {
+        name: "Romântico",
+      },
+    ],
+    img: require("../../img/buque-24-rosas-champanhe.png"),
+  },
+  {
+    id: 60,
+    name: "Kit de Aniversário Felicidades para Você",
+    old_price: "329,90",
+    price: "249,90",
+    category_item: [
+      {
+        name: "Cestas de Aniversário",
+      },
+    ],
+    img: require("../../img/kit-felicidades.png"),
+  },
+  {
+    id: 61,
+    name: "Buquê de 8 Rosas Vermelhas e Pelúcia",
+    old_price: "321,90",
+    price: "273,0",
+    category_item: [
+      {
+        name: "Pelúcias",
+      },
+    ],
+    img: require("../../img/buque-rosas-urso.png"),
+  },
 ];
 
 const filters = [
@@ -767,23 +860,18 @@ const filters = [
     name: "Tipo de flor",
     category: [
       {
-        id: 1,
         name: "Astromélias",
       },
       {
-        id: 2,
         name: "Flores Secas",
       },
       {
-        id: 3,
         name: "Gérberas",
       },
       {
-        id: 4,
         name: "Girassóis",
       },
       {
-        id: 5,
         name: "Rosa Encantada",
       },
     ],
@@ -792,24 +880,10 @@ const filters = [
     name: "Presentes",
     category: [
       {
-        id: 6,
-        name: "Bolos",
-      },
-      {
-        id: 7,
         name: "Chocolates",
       },
       {
-        id: 8,
-        name: "Guloseimas",
-      },
-      {
-        id: 9,
         name: "Pelúcias",
-      },
-      {
-        id: 10,
-        name: "Presente Criativo",
       },
     ],
   },
@@ -856,6 +930,14 @@ const filters = [
       },
       {
         name: "Romântico",
+      },
+    ],
+  },
+  {
+    name: "Para cuidar",
+    category: [
+      {
+        name: "Acessórios",
       },
     ],
   },
