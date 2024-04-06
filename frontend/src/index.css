@@ -1,19 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 body {
   margin: 0;
-<<<<<<< HEAD
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(26, 240, 165);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-=======
   padding: 0;
   overflow-x: hidden;
 }
@@ -41,5 +28,4 @@ code {
 
 .font-header {
   font-family: "Inter", "Mulish", sans-serif;
->>>>>>> 79ec174d004d19ab28d3911460be45cdf276ab24
 }

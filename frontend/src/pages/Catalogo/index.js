@@ -43,109 +43,110 @@ function Catalogo() {
 
   return (
     <Box mt="10rem">
-      <Flex justify="center">
+      <Stack direction="column">
         <Flex justify="center">
-          <Stack direction="column">
-            {filters.map((item, i) => (
-              <Box key={i}>
-                <List>
-                  <ListItem>
-                    <Text fontWeight="500">{item.name}</Text>
-                  </ListItem>
-                </List>
-                {item.category.map((category) => (
-                  <List key={category.id}>
+          <Flex justify="center">
+            <Stack direction="column">
+              {filters.map((item, i) => (
+                <Box key={i}>
+                  <List>
                     <ListItem>
-                      <Stack direction="row">
-                        <CheckboxStyled
-                          controlColor="black"
-                          onChange={() => handleCategoryClick(category.name)}
-                          isChecked={selectedCategory === category.name}
-                          roundedFull
-                        />
-                        <Text fontWeight="100">
-                          {category.name} ({getCategoryItemCount(category.name)}
-                          )
-                        </Text>
-                      </Stack>
+                      <Text fontWeight="500">{item.name}</Text>
                     </ListItem>
                   </List>
-                ))}
-              </Box>
-            ))}
-          </Stack>
-        </Flex>
-        <Flex justifyContent="center">
-          <Grid
-            templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
-            gap={{ base: "4", md: "8" }}
-            mb="50rem"
-          >
-            {filteredProducts.map((product) => (
-              <Box
-                key={product.id}
-                as="div"
-                _hover={{ cursor: "pointer", boxShadow: "lg" }}
-                borderRadius="sm"
-                p="2"
-                position="relative"
-                height="400px"
-              >
-                <Image
-                  src={product.img}
-                  onClick={() =>
-                    (window.location.href = `/products/details/${product.id}`)
-                  }
-                  alt={product.name}
-                  borderRadius="md"
-                  w="100%"
-                  h="auto"
-                  transition="transform 0.2s"
-                  _hover={{ transform: "scale(1.05)" }}
-                />
-                <Box m="3" mb="5rem">
-                  <Text
-                    fontSize="sm"
-                    color={colorMode === "light" ? "gray.600" : "gray.300"}
-                    m="2"
-                  >
-                    {product.name}
-                  </Text>
+                  {item.category.map((category) => (
+                    <List key={category.id}>
+                      <ListItem>
+                        <Stack direction="row">
+                          <CheckboxStyled
+                            controlColor="black"
+                            onChange={() => handleCategoryClick(category.name)}
+                            isChecked={selectedCategory === category.name}
+                            roundedFull
+                          />
+                          <Text fontWeight="100">
+                            {category.name} (
+                            {getCategoryItemCount(category.name)})
+                          </Text>
+                        </Stack>
+                      </ListItem>
+                    </List>
+                  ))}
                 </Box>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  position="absolute"
-                  bottom="5"
-                  left="5"
-                  right="5"
+              ))}
+            </Stack>
+          </Flex>
+          <Flex justifyContent="center" w="70%">
+            <Grid
+              templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+              gap={{ base: "4", md: "8" }}
+            >
+              {filteredProducts.map((product) => (
+                <Box
+                  key={product.id}
+                  as="div"
+                  _hover={{ cursor: "pointer", boxShadow: "lg" }}
+                  borderRadius="sm"
+                  p="2"
+                  position="relative"
+                  height="400px"
                 >
-                  <Box zIndex={3}>
-                    <ProductCard product={product} />
-                  </Box>
-                  <Box>
+                  <Image
+                    src={product.img}
+                    onClick={() =>
+                      (window.location.href = `/products/details/${product.id}`)
+                    }
+                    alt={product.name}
+                    borderRadius="md"
+                    w="100%"
+                    h="auto"
+                    transition="transform 0.2s"
+                    _hover={{ transform: "scale(1.05)" }}
+                  />
+                  <Box m="3" mb="5rem">
                     <Text
-                      fontWeight="semibold"
-                      fontSize="lg"
-                      color={colorMode === "light" ? "gray.700" : "gray.200"}
-                    >
-                      ${product.price}
-                    </Text>
-                    <Text
-                      as="s"
                       fontSize="sm"
-                      color={colorMode === "light" ? "gray.500" : "gray.300"}
+                      color={colorMode === "light" ? "gray.600" : "gray.300"}
+                      m="2"
                     >
-                      ${product.old_price}
+                      {product.name}
                     </Text>
                   </Box>
-                </Stack>
-              </Box>
-            ))}
-          </Grid>
+                  <Stack
+                    direction="row"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    position="absolute"
+                    bottom="5"
+                    left="5"
+                    right="5"
+                  >
+                    <Box zIndex={3}>
+                      <ProductCard product={product} />
+                    </Box>
+                    <Box>
+                      <Text
+                        fontWeight="semibold"
+                        fontSize="lg"
+                        color={colorMode === "light" ? "gray.700" : "gray.200"}
+                      >
+                        ${product.price}
+                      </Text>
+                      <Text
+                        as="s"
+                        fontSize="sm"
+                        color={colorMode === "light" ? "gray.500" : "gray.300"}
+                      >
+                        ${product.old_price}
+                      </Text>
+                    </Box>
+                  </Stack>
+                </Box>
+              ))}
+            </Grid>
+          </Flex>
         </Flex>
-      </Flex>
+      </Stack>
     </Box>
   );
 }

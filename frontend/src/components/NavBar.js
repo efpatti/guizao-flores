@@ -112,7 +112,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
           justify="space-between"
           colorScheme={colorMode === "light" ? "dark" : "light"}
         >
-          <Box position="relative" width="100px" height="100px">
+          <Box position="fixed" w="100px" height="100px">
             <Image
               src={Guizao}
               alt="Logo"

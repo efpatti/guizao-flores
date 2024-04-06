@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
-import "./App.css";
-import Cadastro from "./pages/Cadastro";
-
-function App() {
-  return (
-    <ChakraProvider>
-      <h1 className="text-center">CADASTRO</h1>
-      <Cadastro />
-
-      <br></br>
-    </ChakraProvider>
-=======
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { CartProvider } from "./CartContext";
@@ -50,7 +35,6 @@ function App() {
         </ChakraProvider>
       </Router>
     </CartProvider>
->>>>>>> 79ec174d004d19ab28d3911460be45cdf276ab24
   );
 }
 

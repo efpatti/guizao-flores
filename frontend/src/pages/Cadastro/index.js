@@ -1,4 +1,3 @@
-import "../Cadastro/Cadastro.css";
 import {
   Container,
   Row,
@@ -11,11 +10,10 @@ import {
 } from "react-bootstrap";
 import * as formik from "formik";
 import * as yup from "yup";
-import { ChakraBaseProvider, ChakraProvider } from "@chakra-ui/react";
-import "../Cadastro/Cadastro.css";
-import Eu from "../img/eu.jpg";
-import buque1 from "../img/buque.webp";
-import buque2 from "../img/flor.webp";
+import "./Cadastro.css";
+import Eu from "../../img/eu.jpg";
+import buque1 from "../../img/buque.webp";
+import buque2 from "../../img/flor.webp";
 
 function Cadastro() {
   const { Formik } = formik;
