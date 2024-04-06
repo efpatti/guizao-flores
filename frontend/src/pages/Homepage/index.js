@@ -143,7 +143,6 @@ function Home() {
                     <Text className="texto-preco" fontSize="2xl">
                       R${product.price}
                     </Text>
-                    
                   </Stack>
                 </CardBody>
                 <Divider />
@@ -158,7 +157,7 @@ function Home() {
           ))}
         </Row>
       </Container>
-      <Image fluid className="banner-amor mb-5" src={apaixonado} />
+      <Image className="banner-amor mb-5" src={apaixonado} fluid />
       <Container mt="1rem" mb="1rem">
         <Row>
           {/* Mapeamento dos produtos */}
@@ -173,7 +172,6 @@ function Home() {
                     <Text className="texto-preco" fontSize="2xl">
                       R${product.price}
                     </Text>
-                  
                   </Stack>
                 </CardBody>
                 <Divider />
@@ -263,9 +261,10 @@ function Home() {
           </Stack>
         </Box>
       </Flex>
-      <br/><br/><br/>
+      <br />
+      <br />
+      <br />
     </section>
-    
   );
 }
 

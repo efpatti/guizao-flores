@@ -89,7 +89,8 @@ function Catalogo() {
                   as="div"
                   _hover={{ cursor: "pointer", boxShadow: "lg" }}
                   borderRadius="sm"
-                  p="2"
+                  mb="5"
+                  p="4"
                   position="relative"
                   height="400px"
                 >
@@ -105,7 +106,7 @@ function Catalogo() {
                     transition="transform 0.2s"
                     _hover={{ transform: "scale(1.05)" }}
                   />
-                  <Box m="3" mb="5rem">
+                  <Box>
                     <Text
                       fontSize="sm"
                       color={colorMode === "light" ? "gray.600" : "gray.300"}
@@ -117,9 +118,11 @@ function Catalogo() {
                   <Stack
                     direction="row"
                     justifyContent="space-between"
+                    justify="center"
                     alignItems="center"
                     position="absolute"
-                    bottom="5"
+                    w="70%"
+                    bottom="0"
                     left="5"
                     right="5"
                   >

@@ -81,6 +81,7 @@
   width: 100%;
   margin: 0 auto;
   max-width: 100vw;
+  height: 300px;
 }
 
 .carousel-item {
@@ -89,5 +90,8 @@
 
 .bannerfoto {
   width: 100%;
-  object-fit: cover;
+}
+
+.banner-amor {
+  width: 100%;
 }

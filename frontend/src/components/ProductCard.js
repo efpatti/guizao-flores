@@ -78,10 +78,12 @@ function ProductCard({ product, buttonText }) {
           fontSize="xs"
           textTransform="uppercase"
         >
-          {buttonText}
-          <Box ml="0.5rem">
-            <MdShoppingCart />
-          </Box>
+          <Flex align="center" justifyContent="center">
+            <Box pl="1.5rem">{buttonText}</Box>
+            <Box pr="1.5rem">
+              <MdShoppingCart />
+            </Box>
+          </Flex>
         </Button>
       )}
     </Grid>
