@@ -7,8 +7,6 @@
 }
 
 .login-box {
-  background-color: #fff;
-  border: 3px solid #f5f5f5;
   border-radius: 20px;
   padding: 40px;
   width: 400px;
@@ -26,8 +24,4 @@
   border-radius: 3%;
   box-shadow: 3px 3px 3px 3px #f7f7f7;
   outline: none;
-}
-.botaomedio {
-  background-color: #fff !important;
-  color: #000000 !important;
 }

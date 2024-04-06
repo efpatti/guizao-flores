@@ -80,6 +80,8 @@ function Catalogo() {
             <Grid
               templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
               gap={{ base: "4", md: "8" }}
+              mb="50rem"
+              mt="0"
             >
               {filteredProducts.map((product) => (
                 <Box

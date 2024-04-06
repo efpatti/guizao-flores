@@ -91,12 +91,13 @@ const NavBar = ({ categories, onSelectCategory }) => {
         w="100%"
         position="fixed"
         zIndex="5"
+        mb="4rem"
         top="0"
         as="nav"
-        pl="1.5rem"
-        pr="1.5rem"
-        pt="1rem"
-        pb="rem"
+        pl="2rem"
+        pr="2rem"
+        pt="2rem"
+        pb="2rem"
         border="0px"
         boxShadow={
           color

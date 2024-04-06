@@ -10,6 +10,7 @@ import {
   useColorMode,
   Text,
   Stack,
+  Box,
 } from "@chakra-ui/react";
 import "./pagamento.css";
 import { MdOutlineContentCopy } from "react-icons/md";
@@ -37,10 +38,15 @@ function Payment() {
   return (
     <Flex
       mt="8.5rem"
+      justifyContent="center"
       color={colorMode === "light" ? "black" : "white"}
       bg={colorMode === "light" ? "white" : "transparent"}
     >
-      <div className={exibirForms ? "elojob" : "caixa-berde"}>
+      <Box
+        className={exibirForms ? "elojob" : "caixa-berde"}
+        h="400px"
+        w="350px"
+      >
         {exibirForms ? (
           <>
             <div>
@@ -48,7 +54,7 @@ function Payment() {
                 {formatPrice(totalPrice)}
               </Text>
               <h3 className="textPayment">Seus dados, para finalizar..</h3>
-              <div className="formInfo elojob">
+              <Box className="formInfo elojob">
                 <FormControl as="fieldset">
                   <FormLabel as="legend">Escolha forma de pagamento</FormLabel>
                   <RadioGroup defaultValue="Itachi">
@@ -85,7 +91,7 @@ function Payment() {
                     </Stack>
                   </FormControl>
                 </div>
-              </div>
+              </Box>
             </div>
           </>
         ) : (
@@ -112,7 +118,7 @@ function Payment() {
             </div>
           </div>
         )}
-      </div>
+      </Box>
       <button
         className={colorMode === "light" ? "butao" : "butao-black"}
         onClick={handleClick}
