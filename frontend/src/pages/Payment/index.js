@@ -11,6 +11,8 @@ import {
   Text,
   Stack,
   Box,
+  useDisclosure,
+  Button
 } from "@chakra-ui/react";
 import "./pagamento.css";
 import { MdOutlineContentCopy } from "react-icons/md";
@@ -20,11 +22,20 @@ import QR from "../../img/qrcode-pix.png";
 import pix from "../../img/pix.png"; // Importe a imagem pix aqui
 import guizao from "../../img/debit.png"; // Importe a imagem guizao aqui
 import { formatPrice } from "../Catalogo/productDetails";
-
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react';
+import videomidia from "../../videos/videoguizao.mp4"
 function Payment() {
   const [exibirForms, setExibirForms] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const totalPriceParam = urlParams.get("totalPrice");
@@ -44,8 +55,9 @@ function Payment() {
     >
       <Box
         className={exibirForms ? "elojob" : "caixa-berde"}
-        h="400px"
+        h="450px"
         w="350px"
+        mb="5rem"
       >
         {exibirForms ? (
           <>
@@ -86,6 +98,22 @@ function Payment() {
                         <Col className="ultima">
                           <Input className="CVV" placeholder="XXX" mr="2" />
                           <Input className="CVV" placeholder="XX/XX" mr="2" />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Button onClick={onOpen}>Concluir Pagamento</Button>
+                        </Row>
+                      <Row>
+                        <Col>
+
+<Modal isOpen={isOpen} onClose={onClose}>
+  <ModalOverlay />
+  <ModalContent>
+  <video autoPlay loop muted>
+                <source src={videomidia} type="video/mp4" />
+              </video>
+  </ModalContent>
+</Modal>
                         </Col>
                       </Row>
                     </Stack>
