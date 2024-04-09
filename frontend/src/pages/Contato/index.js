@@ -51,12 +51,13 @@ function Contato() {
               className="contact-inputs"
               required
             />
-            <Textarea
+            <Input
+              type="text"
               name="message"
               placeholder="Escreva sua mensagem aqui"
               className="contact-inputs"
               required
-            ></Textarea>
+            ></Input>
             <Button
               onClick={() =>
                 toast({
