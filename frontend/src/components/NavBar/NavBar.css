@@ -1,0 +1,17 @@
+.blink-me {
+  animation: blinker 10s linear infinite;
+  border-radius: 20rem;
+}
+
+@keyframes blinker {
+  0% {
+    color: white;
+    background-color: #405b18;
+    opacity: 50;
+  }
+  100% {
+    background-color: white;
+    color: #405b18;
+    opacity: 0;
+  }
+}

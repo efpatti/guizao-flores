@@ -19,6 +19,7 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  Grid,
 } from "@chakra-ui/react";
 import {
   MdDarkMode,
@@ -27,10 +28,10 @@ import {
   MdShoppingCart,
 } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa";
-import { CartContext } from "../CartContext";
-import Guizao from "../img/guizao-flores.png";
-import GuizaoJoia from "../img/guizao-flores-joia.png";
-import CartProduct from "./CartProduct";
+import { CartContext } from "../../CartContext";
+import Guizao from "../../img/guizao-flores.png";
+import CartProduct from "../CartProduct";
+import "./NavBar.css";
 
 const NavBar = ({ categories, onSelectCategory }) => {
   const navData = [
@@ -113,21 +114,18 @@ const NavBar = ({ categories, onSelectCategory }) => {
           justify="space-between"
           colorScheme={colorMode === "light" ? "dark" : "light"}
         >
-          <Box position="fixed" w="100px" height="100px">
+          <Box
+            position="fixed"
+            w="200px"
+            height="100px"
+            justify="center"
+            align="center"
+          >
             <Image
               src={Guizao}
               alt="Logo"
               boxSize="100px"
               className="blink-me"
-              position="absolute"
-              top="0"
-              left="0"
-            />
-            <Image
-              src={GuizaoJoia}
-              alt="Logo"
-              boxSize="100px"
-              className="show-me"
               position="absolute"
               top="0"
               left="0"
