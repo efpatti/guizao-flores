@@ -43,8 +43,8 @@ function SobreNos() {
                 atendimento ao cliente. Com uma equipe dedicada e experiente, a
                 loja busca constantemente inovar e surpreender seus clientes,
                 tornando cada compra uma experiência única e gratificante.
-                <br />
-                <br />
+              </p>
+              <p className="mt-1">
                 Além de oferecer produtos de alta qualidade, a Guizäo Flores se
                 destaca por sua praticidade e conveniência, permitindo que os
                 clientes encomendem flores e presentes especiais com apenas
@@ -73,8 +73,8 @@ function SobreNos() {
                 esse problema, decidiu fundar sua própria loja online,
                 oferecendo uma ampla variedade de flores frescas e arranjos
                 exclusivos para clientes de todo o país.
-                <br />
-                <br />
+              </p>
+              <p className="mt-2">
                 Com determinação e dedicação, Guizäo trabalhou incansavelmente
                 para construir sua loja, buscando sempre inovar e proporcionar
                 uma experiência excepcional aos seus clientes. O sucesso da
