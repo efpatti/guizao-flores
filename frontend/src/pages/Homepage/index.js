@@ -130,7 +130,7 @@ function Home() {
             </Col>
           ))}
         </Row>
-        <h1 className="letreiro1">Acessorios para sua planta</h1>
+        <h1 className="letreiro1">Acessórios para sua planta</h1>
         <Row>
           {produtosAcessorios.map((product, index) => (
             <Col key={index}>

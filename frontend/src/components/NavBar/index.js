@@ -120,6 +120,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
             height="100px"
             justify="center"
             align="center"
+            padding="20px"
           >
             <Image
               src={Guizao}
@@ -129,6 +130,7 @@ const NavBar = ({ categories, onSelectCategory }) => {
               position="absolute"
               top="0"
               left="0"
+              padding="10px"
             />
           </Box>
 
