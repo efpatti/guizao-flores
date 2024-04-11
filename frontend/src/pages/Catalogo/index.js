@@ -48,7 +48,12 @@ function Catalogo() {
           <Flex justify="center">
             <Stack direction="column">
               {filters.map((item, i) => (
-                <Box key={i}>
+                <Box
+                  key={i}
+                  bg={colorMode === "light" ? "whitesmoke" : "gray.700"}
+                  borderRadius="lg"
+                  p="3"
+                >
                   <List>
                     <ListItem>
                       <Text fontWeight="500">{item.name}</Text>
