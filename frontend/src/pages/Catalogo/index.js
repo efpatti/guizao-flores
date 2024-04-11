@@ -52,7 +52,6 @@ function Catalogo() {
                   key={i}
                   bg={colorMode === "light" ? "whitesmoke" : "gray.700"}
                   borderRadius="lg"
-                  p="3"
                 >
                   <List>
                     <ListItem>
