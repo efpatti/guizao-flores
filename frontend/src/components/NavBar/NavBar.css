@@ -5,12 +5,12 @@
 
 @keyframes blinker {
   0% {
-    color: white;
+    color: transparent;
     background-color: #405b18;
     opacity: 50;
   }
   100% {
-    background-color: white;
+    background-color: transparent;
     color: #405b18;
     opacity: 0;
   }
